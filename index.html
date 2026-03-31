@@ -3,121 +3,305 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Instituto Acolher</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-</head>
-<body class="bg-gray-50 font-sans text-gray-800 antialiased overflow-x-hidden">
+    <title>Instituto Acari</title>
 
-    <nav class="absolute w-full z-50 top-0">
-        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center text-white">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,700&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['DM Sans', 'sans-serif'],
+                        display: ['Fraunces', 'serif'],
+                    },
+                    colors: {
+                        'teal-deep': '#0D3B38',
+                        'teal-mid': '#1A5C56',
+                        'teal-light': '#2E8B7A',
+                        'coral': '#E8533A',
+                        'gold': '#D4A843',
+                        'cream': '#F5F0E8',
+                        'warm-white': '#FDFAF5',
+                    },
+                    animation: {
+                        'scroll-left': 'scroll-left 25s linear infinite',
+                        'float': 'float 3s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        'scroll-left': {
+                            'from': { transform: 'translateX(0)' },
+                            'to': { transform: 'translateX(-50%)' },
+                        },
+                        'float': {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(8px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer base {
+            body { @apply bg-warm-white font-sans text-[#1C2B28] antialiased; }
+            em { @apply italic text-gold not-italic; }
+        }
+        /* Grain Overlay */
+        .grain::before {
+            content: '';
+            @apply fixed inset-0 pointer-events-none z-[9999] opacity-5;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+        }
+    </style>
+</head>
+<body class="grain">
+
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 px-8 py-6 transition-all duration-500">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
             <div class="flex items-center gap-3">
-                <img src="./img/logo.png" alt="Logo" class="w-12 h-12 rounded-full object-cover bg-white shadow-sm">
+                <img src="./img/logo.png" class="w-11 h-11 rounded-full border-2 border-white/30 object-cover shadow-sm">
+                <span class="font-display text-lg font-bold text-white tracking-tight">Instituto Acari</span>
             </div>
-            <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
-                <a href="#inicio" class="hover:text-red-400 transition">Início</a>
-                <a href="#apoio" class="hover:text-red-400 transition">Nosso Caminho</a>
-                <a href="#depoimentos" class="hover:text-red-400 transition">Apoio Diário</a>
-                <a href="#contato" class="hover:text-red-400 transition">Fale Conosco</a>
+            
+            <div class="hidden md:flex items-center gap-10">
+                <a href="#inicio" class="text-white/80 text-[0.7rem] uppercase tracking-[0.15em] hover:text-white transition-colors relative group">
+                    Início
+                    <span class="absolute -bottom-1 left-0 w-0 h-px bg-gold transition-all duration-300 group-hover:w-full"></span>
+                </a>
+                <a href="#sobre" class="text-white/80 text-[0.7rem] uppercase tracking-[0.15em] hover:text-white transition-colors relative group">Quem Somos</a>
+                <a href="#apoio" class="text-white/80 text-[0.7rem] uppercase tracking-[0.15em] hover:text-white transition-colors relative group">Frentes</a>
+                <a href="#depoimentos" class="text-white/80 text-[0.7rem] uppercase tracking-[0.15em] hover:text-white transition-colors relative group">Depoimentos</a>
+                <a href="#contato" class="bg-coral text-white px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-[#c9402a] hover:-translate-y-0.5 transition-all shadow-lg shadow-coral/30">Fale Conosco</a>
             </div>
-            <button class="md:hidden text-white text-2xl"><i class="fas fa-bars"></i></button>
-            <div class="hidden md:block w-10 h-10 rounded-full bg-white/10 flex items-center justify-center border border-white/20 cursor-pointer hover:bg-white/20 transition">
-                <i class="fas fa-ellipsis-v"></i>
-            </div>
+
+            <button id="hamburger" class="md:hidden flex flex-col gap-1.5 p-2">
+                <span class="w-6 h-0.5 bg-white rounded-full"></span>
+                <span class="w-6 h-0.5 bg-white rounded-full"></span>
+                <span class="w-6 h-0.5 bg-white rounded-full"></span>
+            </button>
         </div>
     </nav>
 
-<section id="inicio" style="background-image: url('img/fundo.png');" class="relative w-full bg-[#1A2E40] bg-cover bg-center bg-no-repeat pt-32 pb-48 lg:pt-40 lg:pb-64">
-        
-        <div class="max-w-7xl mx-auto px-6 relative z-10">
-            <div class="max-w-2xl">
-                <h1 class="text-5xl md:text-6xl font-extrabold text-white leading-tight mb-6 drop-shadow-lg">
-                    VOCÊ NÃO ESTÁ <br> SOZINHO
+    <section id="inicio" class="relative min-h-screen flex items-center overflow-hidden">
+        <div class="absolute inset-0 bg-[url('./img/fundo.png')] bg-cover bg-center z-0">
+            <div class="absolute inset-0 bg-gradient-to-br from-teal-deep/90 via-teal-deep/70 to-teal-deep/40"></div>
+        </div>
+
+        <div class="relative z-10 max-w-7xl mx-auto px-8 grid md:grid-cols-2 gap-16 items-center w-full pt-20">
+            <div class="reveal">
+                <div class="inline-flex items-center gap-2 bg-white/10 border border-white/20 backdrop-blur-md px-4 py-1.5 rounded-full text-[0.7rem] uppercase tracking-[0.15em] text-white/90 mb-8">
+                    <span class="w-1.5 h-1.5 rounded-full bg-gold animate-pulse"></span>
+                    Apoio emocional & saúde mental
+                </div>
+                <h1 class="font-display text-6xl md:text-8xl font-black text-white leading-[0.95] tracking-tighter mb-6">
+                    Você não<br>está <em>sozinho</em>
                 </h1>
-                <p class="text-lg text-gray-100 mb-8 max-w-lg drop-shadow-md font-medium">
+                <p class="text-white/70 text-lg font-light leading-relaxed max-w-md mb-10">
                     Caminho para a cura e a esperança. Encontre a peça que faltava para o seu equilíbrio emocional.
                 </p>
-                <a href="#contato" class="inline-block bg-[#E53935] text-white px-8 py-4 rounded-full font-bold shadow-[0_4px_15px_rgba(229,57,53,0.4)] hover:bg-red-700 hover:scale-105 transition-all">
-                    FALE COM UM CONSELHEIRO AGORA
+                <div class="flex flex-wrap gap-4 font-display">
+                    <a href="#contato" class="bg-coral text-white px-8 py-4 rounded-full font-bold shadow-xl shadow-coral/40 hover:-translate-y-1 transition-all flex items-center gap-2 group">
+                        Fale com um conselheiro <i class="fas fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="flex flex-col gap-6 items-end hidden md:flex">
+                <div class="bg-white/10 backdrop-blur-xl border border-white/20 p-8 rounded-3xl w-full max-w-[280px] hover:-translate-x-2 transition-transform duration-300">
+                    <div class="font-display text-5xl font-bold text-gold">1.2k+</div>
+                    <div class="text-white/60 text-xs uppercase tracking-widest mt-2">Pessoas acolhidas</div>
+                </div>
+                <div class="bg-white/10 backdrop-blur-xl border border-white/20 p-8 rounded-3xl w-full max-w-[280px] hover:-translate-x-2 transition-transform duration-300">
+                    <div class="font-display text-5xl font-bold text-gold">98%</div>
+                    <div class="text-white/60 text-xs uppercase tracking-widest mt-2">Melhora relatada</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 animate-float opacity-40">
+            <div class="w-px h-12 bg-gradient-to-b from-white to-transparent"></div>
+            <span class="text-[0.6rem] uppercase tracking-[0.2em] text-white">Rolar</span>
+        </div>
+    </section>
+
+    <div class="bg-teal-deep py-5 overflow-hidden border-y border-white/5 relative z-20">
+        <div class="flex gap-12 whitespace-nowrap animate-scroll-left">
+            <span class="flex items-center gap-4 text-white/40 text-[0.7rem] uppercase tracking-[0.2em]"><span class="w-1.5 h-1.5 rounded-full bg-gold"></span> Escuta Ativa</span>
+            <span class="flex items-center gap-4 text-white/40 text-[0.7rem] uppercase tracking-[0.2em]"><span class="w-1.5 h-1.5 rounded-full bg-gold"></span> Triagem Especializada</span>
+            <span class="flex items-center gap-4 text-white/40 text-[0.7rem] uppercase tracking-[0.2em]"><span class="w-1.5 h-1.5 rounded-full bg-gold"></span> Suporte Familiar</span>
+            <span class="flex items-center gap-4 text-white/40 text-[0.7rem] uppercase tracking-[0.2em]"><span class="w-1.5 h-1.5 rounded-full bg-gold"></span> Rodas de Conversa</span>
+            </div>
+    </div>
+
+    <section id="sobre" class="bg-cream py-32 px-8 overflow-hidden">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-20 items-center">
+            <div class="relative group">
+                <div class="aspect-[4/5] rounded-[40%_60%_60%_40%/50%_40%_60%_50%] overflow-hidden bg-teal-mid shadow-2xl transition-all duration-700 group-hover:rounded-[50%]">
+                    <img src="./img/fundo.png" class="w-full h-full object-cover mix-blend-multiply opacity-80 scale-110 group-hover:scale-100 transition-transform duration-700">
+                </div>
+                <div class="absolute -bottom-8 -right-8 w-36 h-36 bg-coral rounded-full flex flex-col items-center justify-center text-white shadow-2xl shadow-coral/40 font-display">
+                    <span class="text-4xl font-bold">5+</span>
+                    <span class="text-[0.6rem] uppercase tracking-widest text-center leading-tight">Anos de <br> atuação</span>
+                </div>
+            </div>
+            
+            <div>
+                <p class="flex items-center gap-4 text-teal-light text-[0.7rem] uppercase tracking-[0.2em] font-bold mb-6">
+                    <span class="w-8 h-px bg-teal-light"></span> Nossa Missão
+                </p>
+                <h2 class="font-display text-4xl md:text-6xl font-bold text-teal-deep leading-tight mb-8">
+                    Cuidado que vai<br>além do <em>óbvio</em>
+                </h2>
+                <p class="text-teal-mid/70 text-lg leading-relaxed mb-8 font-light">
+                    O Instituto Acari nasceu da crença de que todo ser humano merece ser visto e ouvido. Somos o braço social da Igreja, unindo ciência e fé.
+                </p>
+                <ul class="space-y-4">
+                    <li class="flex items-center gap-4 text-sm font-medium">
+                        <span class="w-6 h-6 rounded-full bg-teal-deep text-white flex items-center justify-center text-[0.6rem]"><i class="fas fa-check"></i></span>
+                        Atendimento humanizado sem julgamentos
+                    </li>
+                    </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="apoio" class="bg-teal-deep py-32 px-8 relative overflow-hidden">
+        <div class="absolute -top-48 -right-48 w-[500px] h-[500px] rounded-full border border-white/5 pointer-events-none"></div>
+        
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+                <div>
+                    <p class="flex items-center gap-4 text-soft-sage text-[0.7rem] uppercase tracking-[0.2em] font-bold mb-6">
+                        <span class="w-8 h-px bg-teal-light"></span> Como atuamos
+                    </p>
+                    <h2 class="font-display text-4xl md:text-6xl font-bold text-white leading-tight">
+                        Nossas frentes<br>de <em>atuação</em>
+                    </h2>
+                </div>
+                <p class="text-white/40 text-lg font-light max-w-sm leading-relaxed">
+                    Combinamos suporte clínico especializado com uma rede de apoio comunitária.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="group bg-white/5 border border-white/10 p-10 rounded-[2rem] transition-all duration-500 hover:bg-white/10 hover:-translate-y-2">
+                    <div class="font-display text-5xl font-black text-white/5 mb-4 transition-opacity group-hover:opacity-20">01</div>
+                    <div class="w-14 h-14 bg-teal-light/20 text-teal-light rounded-2xl flex items-center justify-center text-xl mb-8 border border-teal-light/30">
+                        <i class="fas fa-users-viewfinder"></i>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold text-white mb-4">Rodas de Conversa</h3>
+                    <p class="text-white/50 font-light leading-relaxed mb-8 text-sm">Espaços de escuta segura para validação de experiências e combate ao isolamento social.</p>
+                    <a href="#contato" class="text-teal-light text-xs font-bold uppercase tracking-widest flex items-center gap-3 group-hover:gap-5 transition-all">
+                        Participar <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="group bg-white/5 border border-white/10 p-10 rounded-[2rem] transition-all duration-500 hover:bg-white/10 hover:-translate-y-2">
+                    <div class="font-display text-5xl font-black text-white/5 mb-4">02</div>
+                    <div class="w-14 h-14 bg-coral/20 text-coral rounded-2xl flex items-center justify-center text-xl mb-8 border border-coral/30">
+                        <i class="fas fa-microscope"></i>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold text-white mb-4">Triagem Clínica</h3>
+                    <p class="text-white/50 font-light leading-relaxed mb-8 text-sm">Conexão estratégica com psiquiatras e psicólogos parceiros para tratamento imediato.</p>
+                    <a href="#contato" class="text-coral text-xs font-bold uppercase tracking-widest flex items-center gap-3 group-hover:gap-5 transition-all">
+                        Ver rede <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <div class="group bg-white/5 border border-white/10 p-10 rounded-[2rem] transition-all duration-500 hover:bg-white/10 hover:-translate-y-2">
+                    <div class="font-display text-5xl font-black text-white/5 mb-4">03</div>
+                    <div class="w-14 h-14 bg-gold/20 text-gold rounded-2xl flex items-center justify-center text-xl mb-8 border border-gold/30">
+                        <i class="fas fa-house-chimney-heart"></i>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold text-white mb-4">Suporte Familiar</h3>
+                    <p class="text-white/50 font-light leading-relaxed mb-8 text-sm">Capacitação para familiares aprenderem a lidar com crises e fortalecer laços.</p>
+                    <a href="#contato" class="text-gold text-xs font-bold uppercase tracking-widest flex items-center gap-3 group-hover:gap-5 transition-all">
+                        Orientações <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="depoimentos" class="bg-white py-32 px-8">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-20">
+                <p class="text-teal-light text-[0.7rem] uppercase tracking-[0.2em] font-bold mb-4">Histórias Reais</p>
+                <h2 class="font-display text-4xl md:text-6xl font-bold text-teal-deep">O que dizem <em>as pessoas</em></h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-teal-deep p-10 rounded-[2.5rem] text-white relative overflow-hidden group">
+                    <span class="font-display text-8xl absolute -top-4 -right-4 opacity-10 italic">"</span>
+                    <div class="flex gap-1 text-gold mb-8 text-xs">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-white/80 text-lg font-light italic leading-relaxed mb-10 relative z-10">
+                        "Este instituto foi o caminho para reencontrar a esperança. Sou muito grata por todo o acolhimento que recebi."
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <img src="https://i.pravatar.cc/150?img=47" class="w-12 h-12 rounded-full grayscale group-hover:grayscale-0 transition-all duration-500">
+                        <div>
+                            <p class="font-bold text-sm">Maria Clara</p>
+                            <p class="text-white/40 text-xs tracking-widest uppercase">Participante</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-cream p-10 rounded-[2.5rem] text-teal-deep group">
+                    <div class="flex gap-1 text-gold mb-8 text-xs">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-teal-mid/80 text-lg font-light italic leading-relaxed mb-10">
+                        "Encontrei profissionais incríveis que me ouviram quando eu mais precisava. A comunidade aqui salva vidas."
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <img src="https://i.pravatar.cc/150?img=11" class="w-12 h-12 rounded-full">
+                        <div>
+                            <p class="font-bold text-sm text-teal-deep">Roberto Silva</p>
+                            <p class="text-teal-mid/40 text-xs tracking-widest uppercase">Familiar</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contato" class="bg-teal-deep pt-32 pb-10 px-8 text-white relative">
+        <div class="max-w-4xl mx-auto text-center mb-32">
+            <p class="text-soft-sage text-[0.7rem] uppercase tracking-[0.2em] font-bold mb-6 text-center">Estamos aqui</p>
+            <h2 class="font-display text-5xl md:text-7xl font-bold mb-10 leading-tight">Dê o primeiro<br>passo <em>hoje</em></h2>
+            <div class="flex flex-wrap justify-center gap-6">
+                <a href="#" class="bg-[#25D366] text-white px-10 py-5 rounded-full font-bold shadow-2xl shadow-green-500/20 hover:-translate-y-1 transition-all flex items-center gap-3">
+                    <i class="fab fa-whatsapp text-xl"></i> WhatsApp
+                </a>
+                <a href="#" class="border border-white/20 hover:bg-white/10 px-10 py-5 rounded-full font-bold transition-all flex items-center gap-3 text-white/80">
+                    <i class="fas fa-envelope text-xl"></i> E-mail
                 </a>
             </div>
         </div>
 
-        <div class="absolute bottom-0 w-full overflow-hidden leading-none z-0">
-            <svg class="relative block w-full h-[100px] md:h-[150px]" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C59.71,118.08,130.83,123.63,192.27,108.86,236.46,98.24,280.4,75.24,321.39,56.44Z" fill="#F9FAFB"></path>
-            </svg>
-        </div>
-    </section>
-
-    <section id="apoio" class="relative z-20 bg-gray-50 pt-12 pb-20">
-        <div class="max-w-6xl mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">Nosso Apoio</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                
-                <div class="bg-white rounded-[2rem] p-8 shadow-xl text-center border-b-4 border-blue-500 hover:-translate-y-2 transition-transform">
-                    <div class="w-24 h-24 mx-auto bg-blue-50 rounded-full flex items-center justify-center mb-6">
-                        <i class="fas fa-users text-4xl text-blue-500"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800">Acolhimento Comunitário</h3>
-                </div>
-
-                <div class="bg-white rounded-[2rem] p-8 shadow-xl text-center border-b-4 border-green-500 hover:-translate-y-2 transition-transform">
-                    <div class="w-24 h-24 mx-auto bg-green-50 rounded-full flex items-center justify-center mb-6">
-                        <i class="fas fa-puzzle-piece text-4xl text-green-500"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800">Guiamento Profissional</h3>
-                </div>
-
-                <div class="bg-white rounded-[2rem] p-8 shadow-xl text-center border-b-4 border-yellow-400 hover:-translate-y-2 transition-transform">
-                    <div class="w-24 h-24 mx-auto bg-yellow-50 rounded-full flex items-center justify-center mb-6">
-                        <i class="fas fa-hands-praying text-4xl text-yellow-500"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-gray-800">Apoio Espiritual</h3>
-                </div>
-
+        <div class="max-w-7xl mx-auto border-t border-white/5 pt-10 flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="flex items-center gap-4 opacity-60">
+                <img src="./img/logo.png" class="w-8 h-8 rounded-full grayscale">
+                <span class="font-display text-sm font-bold tracking-tight">Instituto Acari</span>
+            </div>
+            <p class="text-white/20 text-[0.65rem] uppercase tracking-[0.2em] text-center">
+                © 2026 Instituto Acari · Braço Social da Igreja · Feito com amor e fé
+            </p>
+            <div class="flex gap-6 opacity-40">
+                <a href="#" class="hover:opacity-100 transition-opacity"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="hover:opacity-100 transition-opacity"><i class="fab fa-facebook"></i></a>
             </div>
         </div>
-    </section>
-
-    <section id="depoimentos" class="py-20 bg-gray-50">
-        <div class="max-w-5xl mx-auto px-6">
-            <h2 class="text-3xl font-bold text-center text-gray-900 mb-16">Depoimentos</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="flex items-center gap-6 bg-blue-50 p-6 rounded-3xl shadow-sm">
-                    <img src="https://i.pravatar.cc/150?img=47" alt="Usuário" class="w-16 h-16 rounded-full border-2 border-white shadow-md">
-                    <p class="text-gray-700 text-sm font-medium italic">"Este instituto foi o caminho para reencontrar a esperança. Sou muito grata por todo o acolhimento."</p>
-                </div>
-
-                <div class="flex items-center gap-6 bg-green-50 p-6 rounded-3xl shadow-sm">
-                    <img src="https://i.pravatar.cc/150?img=11" alt="Usuário" class="w-16 h-16 rounded-full border-2 border-white shadow-md">
-                    <p class="text-gray-700 text-sm font-medium italic">"Encontrei profissionais incríveis que me ouviram quando eu mais precisava. A comunidade aqui salva vidas."</p>
-                </div>
-
-                <div class="flex items-center gap-6 bg-yellow-50 p-6 rounded-3xl shadow-sm">
-                    <img src="https://i.pravatar.cc/150?img=33" alt="Usuário" class="w-16 h-16 rounded-full border-2 border-white shadow-md">
-                    <p class="text-gray-700 text-sm font-medium italic">"Quando tudo estava escuro, o apoio espiritual e psicológico me deram forças para continuar."</p>
-                </div>
-
-                <div class="flex items-center gap-6 bg-red-50 p-6 rounded-3xl shadow-sm">
-                    <img src="https://i.pravatar.cc/150?img=12" alt="Usuário" class="w-16 h-16 rounded-full border-2 border-white shadow-md">
-                    <p class="text-gray-700 text-sm font-medium italic">"Uma rede de conexão verdadeira. Você percebe que não está sozinho nessa jornada."</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer id="contato" class="bg-[#1A2E40] pt-12 pb-6 flex flex-col items-center">
-        <div class="bg-[#2A3F54] px-8 py-3 rounded-full flex gap-6 mb-8 shadow-lg">
-            <a href="#" class="text-gray-300 hover:text-white transition text-xl"><i class="fas fa-phone"></i></a>
-            <a href="#" class="text-gray-300 hover:text-white transition text-xl"><i class="fas fa-envelope"></i></a>
-            <a href="#" class="text-gray-300 hover:text-white transition text-xl"><i class="fab fa-whatsapp"></i></a>
-            <img src="logo.jpg" alt="Logo Min" class="w-8 h-8 rounded-full ml-4 border border-white/20">
-        </div>
-        <p class="text-gray-400 text-sm">Instituto Acolher - Braço Social da Igreja | &copy; 2026. Feito com amor e fé.</p>
     </footer>
 
-    <script src="script.js" defer></script>
+    <script src="./script.js" defer></script>
 </body>
 </html>

@@ -1,16 +1,15 @@
-// script.js
+'use strict'
 
-document.addEventListener("DOMContentLoaded", () => {
-    const navbar = document.querySelector('nav');
 
-    // Efeito na Navbar ao rolar a página
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.classList.add('bg-[#1A2E40]/90', 'backdrop-blur-md', 'shadow-md');
-            navbar.classList.remove('bg-transparent');
-        } else {
-            navbar.classList.add('bg-transparent');
-            navbar.classList.remove('bg-[#1A2E40]/90', 'backdrop-blur-md', 'shadow-md');
-        }
-    });
-});
+ const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                navbar.classList.add('bg-teal-deep/95', 'backdrop-blur-md', 'py-4', 'shadow-2xl');
+                navbar.classList.remove('py-6');
+            } else {
+                navbar.classList.remove('bg-teal-deep/95', 'backdrop-blur-md', 'py-4', 'shadow-2xl');
+                navbar.classList.add('py-6');
+            }
+        });
+
+        
