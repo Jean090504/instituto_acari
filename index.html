@@ -61,6 +61,12 @@
         }
         .reveal { @apply opacity-0 translate-y-10 transition-all duration-700; }
         .reveal.visible { @apply opacity-100 translate-y-0; }
+
+        #mobile-menu {
+        background-color: #0D3B38 !important; /* Cor sólida do seu teal-deep */
+        height: 100vh;
+        width: 100vw;
+        }
     </style>
 
     <meta name="description" content="O Instituto Acari é o braço social da Igreja em Itapevi, oferecendo apoio emocional, rodas de conversa e suporte psicológico especializado. Encontre cura e esperança.">
@@ -109,24 +115,43 @@
 </head>
 <body class="grain">
 
-    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 px-8 py-6 transition-all duration-500">
-        <div class="max-w-7xl mx-auto flex justify-between items-center text-white">
-            <div class="flex items-center gap-3">
-                <img src="./img/logo.png" class="w-11 h-11 rounded-full border-2 border-white/30 object-cover shadow-sm bg-white">
-                <span class="font-display text-lg font-bold tracking-tight">Instituto Acari</span>
-            </div>
-            <div class="hidden md:flex items-center gap-10">
-                <a href="#inicio" class="text-white/80 text-[0.7rem] uppercase tracking-[0.15em] hover:text-white transition-colors relative group">
-                    Início
-                    <span class="absolute -bottom-1 left-0 w-0 h-px bg-gold transition-all duration-300 group-hover:w-full"></span>
-                </a>
-                <a href="#sobre" class="text-white/80 text-[0.7rem] uppercase tracking-[0.15em] hover:text-white transition-colors">Quem Somos</a>
-                <a href="#apoio" class="text-white/80 text-[0.7rem] uppercase tracking-[0.15em] hover:text-white transition-colors">Frentes</a>
-                <a href="#loja" class="text-white/80 text-[0.7rem] uppercase tracking-[0.15em] hover:text-white transition-colors text-gold">Lojinha</a>
-                <a href="#contato" class="bg-coral text-white px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-[#c9402a] hover:-translate-y-0.5 transition-all shadow-lg shadow-coral/30">Fale Conosco</a>
-            </div>
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-[100] px-8 py-6 transition-all duration-500">
+    <div class="max-w-7xl mx-auto flex justify-between items-center relative z-[110]">
+        <div class="flex items-center gap-3">
+            <img src="./img/logo.png" class="w-11 h-11 rounded-full border-2 border-white/30 object-cover shadow-sm bg-white">
+            <span class="font-display text-lg font-bold text-white tracking-tight">Instituto Acari</span>
         </div>
-    </nav>
+        
+        <div class="hidden md:flex items-center gap-10">
+            <a href="#inicio" class="text-white/80 text-[0.7rem] uppercase tracking-[0.15em] hover:text-white transition-colors relative group">
+                Início
+                <span class="absolute -bottom-1 left-0 w-0 h-px bg-gold transition-all duration-300 group-hover:w-full"></span>
+            </a>
+            <a href="#sobre" class="text-white/80 text-[0.7rem] uppercase tracking-[0.15em] hover:text-white transition-colors">Quem Somos</a>
+            <a href="#apoio" class="text-white/80 text-[0.7rem] uppercase tracking-[0.15em] hover:text-white transition-colors">Frentes</a>
+            <a href="#loja" class="text-white/80 text-[0.7rem] uppercase tracking-[0.15em] hover:text-white transition-colors">Lojinha</a>
+            <a href="#contato" class="bg-coral text-white px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-[#c9402a] hover:-translate-y-0.5 transition-all shadow-lg shadow-coral/30">Fale Conosco</a>
+        </div>
+
+        <button id="hamburger" class="md:hidden relative z-[120] flex flex-col gap-1.5 p-2 focus:outline-none">
+            <span id="line1" class="w-6 h-0.5 bg-white rounded-full transition-all"></span>
+            <span id="line2" class="w-6 h-0.5 bg-white rounded-full transition-all"></span>
+        </button>
+    </div>
+
+    <div id="mobile-menu" class="fixed inset-0 bg-[#0D3B38] z-[115] flex flex-col items-center justify-center gap-10 translate-x-full transition-transform duration-500 md:hidden font-display text-3xl text-white italic shadow-2xl">
+        <a href="#inicio" class="hover:text-gold transition-colors mobile-link">Início</a>
+        <a href="#sobre" class="hover:text-gold transition-colors mobile-link">Quem Somos</a>
+        <a href="#apoio" class="hover:text-gold transition-colors mobile-link">Frentes</a>
+        <a href="#loja" class="hover:text-gold transition-colors mobile-link">Lojinha</a>
+        <a href="#contato" class="text-gold mobile-link">Fale Conosco</a>
+        
+        <div class="flex gap-8 mt-10 opacity-60">
+            <a href="#" class="text-2xl"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="text-2xl"><i class="fab fa-facebook"></i></a>
+        </div>
+    </div>
+</nav>
 
     <section id="inicio" class="relative min-h-screen flex items-center overflow-hidden">
         <div class="absolute inset-0 bg-[url('./img/fundo.png')] bg-cover bg-center z-0">
