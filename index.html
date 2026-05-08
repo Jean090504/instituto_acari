@@ -97,197 +97,372 @@
 <!-- HERO -->
 <section id="inicio" class="relative min-h-screen flex items-center pt-28 pb-12 px-6 md:px-8 overflow-hidden bg-white">
     <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center w-full">
-        <div class="z-10 space-y-6 md:space-y-8 text-center md:text-left mt-8 md:mt-0"> 
-            <h1 class="font-display text-4xl sm:text-5xl md:text-7xl font-bold text-acari-yellow leading-tight">
-                Acolher, Cuidar, Apoiar, Respeitar e Incluir.
-            </h1>
-            
-            <div class="text-gray-600 text-base md:text-lg max-w-lg mx-auto md:mx-0 space-y-2 md:space-y-4"> 
-                <p>💙 Acolhimento e Cuidado humanizado.</p>
-                <p>❤️ Amor, Respeito e Inclusão para todos.</p>
-                <p>🧩 Construindo pontes entre potencial e possibilidades.</p>
-            </div>
+            <div class="z-10 space-y-8 md:space-y-10 text-center md:text-left mt-8 md:mt-0"> 
+        
+        <h1 class="font-display text-4xl sm:text-5xl md:text-7xl font-bold text-gray-800 leading-tight">
+            <span class="text-acari-blue">Acolher</span>, 
+            <span class="text-acari-green">Cuidar</span>, 
+            <span class="text-acari-red">Apoiar</span>, 
+            <span class="text-acari-yellow">Respeitar</span> e 
+            <span class="text-acari-dark">Incluir</span>.
+        </h1>
+        
+        <ul class="text-gray-600 text-base md:text-lg max-w-lg mx-auto md:mx-0 space-y-4 md:space-y-5 font-medium"> 
+            <li class="flex items-center justify-center md:justify-start gap-3">
+                <div class="w-8 h-8 rounded-full bg-acari-blue/10 flex items-center justify-center text-acari-blue flex-shrink-0">
+                    <i class="fas fa-hand-holding-heart"></i>
+                </div>
+                <span>Acolhimento e Cuidado humanizado.</span>
+            </li>
+            <li class="flex items-center justify-center md:justify-start gap-3">
+                <div class="w-8 h-8 rounded-full bg-acari-red/10 flex items-center justify-center text-acari-red flex-shrink-0">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <span>Amor, Respeito e Inclusão para todos.</span>
+            </li>
+            <li class="flex items-center justify-center md:justify-start gap-3">
+                <div class="w-8 h-8 rounded-full bg-acari-yellow/10 flex items-center justify-center text-acari-yellow flex-shrink-0">
+                    <i class="fas fa-puzzle-piece"></i>
+                </div>
+                <span>Construindo pontes entre potencial e possibilidades.</span>
+            </li>
+        </ul>
 
-            <div class="flex flex-col sm:flex-row flex-wrap justify-center md:justify-start gap-4">
-                <a href="https://wa.me/5511999999999?text=Ol%C3%A1,%20quero%20ser%20um%20volunt%C3%A1rio%20no%20Instituto%20Acari!" target="_blank" class="bg-acari-green text-white px-6 md:px-8 py-4 rounded-full font-bold shadow-lg hover:scale-105 transition-all flex items-center justify-center gap-2 w-full sm:w-auto text-sm md:text-base">
-                    SEJA UM VOLUNTÁRIO <i class="fab fa-whatsapp"></i>
-                </a>
-                <a href="#amigos" class="bg-acari-yellow text-acari-dark px-6 md:px-8 py-4 rounded-full font-bold shadow-lg hover:scale-105 transition-all w-full sm:w-auto text-center text-sm md:text-base">
-                    CONHEÇA OS PROJETOS
-                </a>
-            </div>
+        <div class="flex flex-col sm:flex-row flex-wrap justify-center md:justify-start gap-4 pt-2">
+            <a href="https://api.whatsapp.com/send/?phone=5511994657566&text=Ol%C3%A1%2C+quero+ser+um+volunt%C3%A1rio+no+Instituto+Acari%21&type=phone_number&app_absent=0" target="_blank" class="group bg-acari-green text-white px-6 md:px-8 py-4 rounded-full font-bold shadow-lg shadow-acari-green/30 hover:-translate-y-1 hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2 w-full sm:w-auto text-sm md:text-base">
+                SEJA UM VOLUNTÁRIO <i class="fab fa-whatsapp text-xl group-hover:rotate-12 transition-transform"></i>
+            </a>
+            <a href="#amigos" class="bg-acari-yellow text-acari-dark px-6 md:px-8 py-4 rounded-full font-bold shadow-lg shadow-acari-yellow/30 hover:-translate-y-1 hover:shadow-xl transition-all duration-300 w-full sm:w-auto text-center text-sm md:text-base">
+                CONHEÇA OS PROJETOS
+            </a>
         </div>
+    </div>
         
         <!-- CONTAINER DO VÍDEO RESPONSIVO -->
-        <div class="relative flex justify-center items-center px-4 md:px-0">
-            <!-- Ao invés de w-[500px], usamos w-full e max-w com aspect-ratio para não estourar a tela -->
-            <div class="w-full max-w-[320px] sm:max-w-[400px] md:max-w-[600px] aspect-[4/5] md:aspect-[6/7] rounded-[2rem] md:rounded-[3rem] overflow-hidden border-4 md:border-8 border-acari-yellow shadow-2xl z-10 bg-gray-200">
-                <video src="./video/video-dia-das-criancas2025.mp4" autoplay muted loop playsinline class="w-full h-full object-cover"></video>
+        <div class="flex justify-center items-center px-4 md:px-0 w-full">
+            <div class="relative h-[500px] sm:h-[600px] md:h-[700px] aspect-[9/16]">
+                <div class="w-full h-full rounded-[2rem] md:rounded-[3rem] overflow-hidden border-4 md:border-8 border-acari-yellow shadow-2xl relative z-10 bg-gray-200">
+                    <video src="./video/video-dia-das-criancas2025.mp4" autoplay muted loop playsinline class="w-full h-full object-cover"></video>
+                </div>
+
+                <div class="absolute top-8 -right-6 md:top-16 md:-right-10 w-12 h-12 md:w-20 md:h-20 bg-acari-red rounded-full z-0"></div>
+                <div class="absolute bottom-8 -left-6 md:bottom-16 md:-left-12 w-16 h-16 md:w-24 md:h-24 bg-acari-blue rounded-full z-0"></div>
             </div>
-            <!-- Bolhas decorativas com responsividade para não saírem da tela -->
-            <div class="absolute top-0 right-0 md:top-10 md:right-10 w-12 h-12 md:w-16 md:h-16 bg-acari-red rounded-full z-0 translate-x-4 -translate-y-4 md:translate-x-0 md:translate-y-0"></div>
-            <div class="absolute bottom-0 left-0 md:bottom-10 md:left-10 w-16 h-16 md:w-24 md:h-24 bg-acari-blue rounded-full z-0 -translate-x-4 translate-y-4 md:translate-x-0 md:translate-y-0"></div>
+        </div>
+    </div>
+</section>
+
+<section id="sobre" class="py-16 md:py-24 bg-white px-6 md:px-8 relative overflow-hidden">
+    <div class="absolute top-0 right-0 w-64 h-64 bg-acari-yellow/10 rounded-full blur-3xl -z-10 translate-x-1/2 -translate-y-1/2"></div>
+    <div class="absolute bottom-0 left-0 w-80 h-80 bg-acari-blue/10 rounded-full blur-3xl -z-10 -translate-x-1/2 translate-y-1/2"></div>
+
+    <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 md:gap-20 items-center relative z-10">
+        
+        <div class="reveal relative px-4 md:px-0">
+            <div class="absolute inset-0 bg-acari-green rounded-[2rem] md:rounded-[3rem] rotate-3 md:rotate-6 scale-[1.02] -z-10 opacity-30"></div>
+            <div class="absolute inset-0 bg-acari-blue rounded-[2rem] md:rounded-[3rem] -rotate-3 md:-rotate-6 scale-[1.02] -z-10 opacity-30"></div>
+            
+            <div class="w-full aspect-square md:aspect-[4/3] rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-2xl border-4 md:border-8 border-acari-yellow relative bg-white">
+                <img src="./img/equipeGeral.jpg" alt="Equipe e estrutura do Instituto Acari" class="w-full h-full object-cover object-center">
+            </div>
+            
+            <div class="absolute -bottom-4 -right-4 md:-bottom-8 md:-right-8 w-12 h-12 md:w-20 md:h-20 bg-acari-red rounded-full border-4 border-white shadow-lg"></div>
+            <div class="absolute -top-4 -left-4 md:-top-6 md:-left-6 w-10 h-10 md:w-14 md:h-14 bg-acari-green rounded-full border-4 border-white shadow-lg"></div>
+        </div>
+
+        <div class="reveal text-center md:text-left space-y-6">
+            <p class="text-acari-blue text-[0.7rem] uppercase tracking-[0.2em] font-bold flex items-center justify-center md:justify-start gap-4">
+                <span class="w-8 h-px bg-acari-blue"></span> Nossa Essência
+            </p>
+            
+            <h2 class="font-display text-3xl md:text-5xl font-bold text-acari-dark leading-tight italic">
+                Cuidado que vai além do <span class="text-acari-red">óbvio</span>
+            </h2>
+            
+            <div class="text-gray-600 text-base md:text-lg leading-relaxed space-y-4">
+                <p>O Instituto Acari atua como um espaço de acolhimento, evolução e esperança. Trabalhamos diretamente para a inclusão social de crianças com TEA e Síndrome de Down, garantindo um apoio contínuo às famílias atendidas. Acreditamos que a verdadeira inclusão acontece quando estendemos a mão com <strong class="text-acari-blue">amor</strong>, <strong class="text-acari-yellow">respeito</strong> e <strong class="text-acari-green">cuidado</strong>.</p>
+                <p>Oferecemos suporte para o desenvolvimento terapêutico e social através de atendimentos em pedagogia, fisioterapia, laserterapia, terapia em grupo e consultoria jurídica. Celebramos as conquistas do dia a dia: na comunicação que evolui, na autonomia que conquistam e no fortalecimento dos vínculos familiares e sociais.</p>
+            </div>
+
+            <div class="flex flex-wrap justify-center md:justify-start gap-3 mt-8">
+                <span class="px-4 py-1.5 rounded-full bg-acari-blue/10 text-acari-blue text-xs font-bold uppercase tracking-wider">Acolhimento</span>
+                <span class="px-4 py-1.5 rounded-full bg-acari-red/10 text-acari-red text-xs font-bold uppercase tracking-wider">Inclusão</span>
+                <span class="px-4 py-1.5 rounded-full bg-acari-yellow/10 text-acari-yellow text-xs font-bold uppercase tracking-wider">Desenvolvimento</span>
+            </div>
         </div>
     </div>
 </section>
 
 <!-- AMIGOS DO ACARI -->
-<section id="amigos" class="py-16 md:py-24 bg-gray-50 px-6 md:px-8">
+<section id="amigos" class="py-16 md:py-24 bg-white px-6 md:px-8 border-y border-gray-100">
     <div class="max-w-7xl mx-auto text-center">
         <h2 class="font-display text-3xl md:text-5xl font-bold text-acari-dark mb-4">Amigos do Acari</h2>
-        <p class="text-gray-600 mb-12 md:mb-16 max-w-2xl mx-auto text-sm md:text-base">Escolha a sua forma de participar e contribua diretamente para as nossas frentes de atuação através do Asaas.</p>
+        <p class="text-gray-600 mb-12 md:mb-16 max-w-2xl mx-auto text-sm md:text-base">
+            Escolha a sua forma de participar e contribua diretamente para as nossas frentes de atuação. 
+            <strong class="text-acari-dark block mt-2">Clique em um dos pilares abaixo para doar:</strong>
+        </p>
         
         <div class="flex flex-wrap justify-center gap-4 md:gap-6">
-            <a href="https://www.asaas.com/c/wt8bxxhlpv1mqjiy" target="_blank" class="w-32 h-32 md:w-40 md:h-40 rounded-full bg-acari-blue text-white flex flex-col items-center justify-center font-bold text-lg md:text-xl hover:scale-110 transition-transform shadow-xl">
-                <i class="fas fa-hands-holding-child mb-1 md:mb-2 text-2xl md:text-3xl"></i>
+            <a href="https://www.asaas.com/c/wt8bxxhlpv1mqjiy" target="_blank" class="group w-32 h-32 md:w-40 md:h-40 rounded-full bg-acari-blue text-white flex flex-col items-center justify-center font-bold text-lg md:text-xl hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 shadow-lg">
+                <i class="fas fa-hand-holding-heart mb-1 md:mb-2 text-2xl md:text-3xl group-hover:scale-110 transition-transform"></i>
                 Acolher
+                <span class="text-[0.6rem] md:text-xs font-normal mt-1 md:mt-2 flex items-center gap-1.5 bg-white/20 px-3 py-1 rounded-full">Doar <i class="fas fa-external-link-alt text-[0.55rem]"></i></span>
             </a>
-            <a href="https://www.asaas.com/c/dlej168n8ol7axa8" target="_blank" class="w-32 h-32 md:w-40 md:h-40 rounded-full bg-acari-green text-white flex flex-col items-center justify-center font-bold text-lg md:text-xl hover:scale-110 transition-transform shadow-xl">
-                <i class="fas fa-heart-pulse mb-1 md:mb-2 text-2xl md:text-3xl"></i>
+            
+            <a href="https://www.asaas.com/c/dlej168n8ol7axa8" target="_blank" class="group w-32 h-32 md:w-40 md:h-40 rounded-full bg-acari-green text-white flex flex-col items-center justify-center font-bold text-lg md:text-xl hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 shadow-lg">
+                <i class="fas fa-heart-pulse mb-1 md:mb-2 text-2xl md:text-3xl group-hover:scale-110 transition-transform"></i>
                 Cuidar
+                <span class="text-[0.6rem] md:text-xs font-normal mt-1 md:mt-2 flex items-center gap-1.5 bg-white/20 px-3 py-1 rounded-full">Doar <i class="fas fa-external-link-alt text-[0.55rem]"></i></span>
             </a>
-            <a href="https://www.asaas.com/c/pgdaig5kj9do8dqe" target="_blank" class="w-32 h-32 md:w-40 md:h-40 rounded-full bg-acari-red text-white flex flex-col items-center justify-center font-bold text-lg md:text-xl hover:scale-110 transition-transform shadow-xl">
-                <i class="fas fa-handshake-angle mb-1 md:mb-2 text-2xl md:text-3xl"></i>
+            
+            <a href="https://www.asaas.com/c/pgdaig5kj9do8dqe" target="_blank" class="group w-32 h-32 md:w-40 md:h-40 rounded-full bg-acari-red text-white flex flex-col items-center justify-center font-bold text-lg md:text-xl hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 shadow-lg">
+                <i class="fas fa-handshake-angle mb-1 md:mb-2 text-2xl md:text-3xl group-hover:scale-110 transition-transform"></i>
                 Apoiar
+                <span class="text-[0.6rem] md:text-xs font-normal mt-1 md:mt-2 flex items-center gap-1.5 bg-white/20 px-3 py-1 rounded-full">Doar <i class="fas fa-external-link-alt text-[0.55rem]"></i></span>
             </a>
-            <a href="https://www.asaas.com/c/gulcxgoryh8142gz" target="_blank" class="w-32 h-32 md:w-40 md:h-40 rounded-full bg-acari-yellow text-acari-dark flex flex-col items-center justify-center font-bold text-lg md:text-xl hover:scale-110 transition-transform shadow-xl">
-                <i class="fas fa-people-arrows mb-1 md:mb-2 text-2xl md:text-3xl"></i>
+            
+            <a href="https://www.asaas.com/c/gulcxgoryh8142gz" target="_blank" class="group w-32 h-32 md:w-40 md:h-40 rounded-full bg-acari-yellow text-acari-dark flex flex-col items-center justify-center font-bold text-lg md:text-xl hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 shadow-lg">
+                <i class="fas fa-people-arrows mb-1 md:mb-2 text-2xl md:text-3xl group-hover:scale-110 transition-transform"></i>
                 Respeitar
+                <span class="text-[0.6rem] md:text-xs font-normal mt-1 md:mt-2 flex items-center gap-1.5 bg-acari-dark/10 px-3 py-1 rounded-full">Doar <i class="fas fa-external-link-alt text-[0.55rem]"></i></span>
             </a>
-            <a href="https://www.asaas.com/c/gznr38w31w8ye780" target="_blank" class="w-32 h-32 md:w-40 md:h-40 rounded-full bg-acari-dark text-white flex flex-col items-center justify-center font-bold text-lg md:text-xl hover:scale-110 transition-transform shadow-xl">
-                <i class="fas fa-users mb-1 md:mb-2 text-2xl md:text-3xl"></i>
+            
+            <a href="https://www.asaas.com/c/gznr38w31w8ye780" target="_blank" class="group w-32 h-32 md:w-40 md:h-40 rounded-full bg-acari-dark text-white flex flex-col items-center justify-center font-bold text-lg md:text-xl hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 shadow-lg">
+                <i class="fas fa-users mb-1 md:mb-2 text-2xl md:text-3xl group-hover:scale-110 transition-transform"></i>
                 Incluir
+                <span class="text-[0.6rem] md:text-xs font-normal mt-1 md:mt-2 flex items-center gap-1.5 bg-white/20 px-3 py-1 rounded-full">Doar <i class="fas fa-external-link-alt text-[0.55rem]"></i></span>
             </a>
         </div>
     </div>
 </section>
 
 <!-- DOAÇÕES -->
-<section id="doacoes" class="py-16 md:py-20 bg-white px-6 md:px-8 border-y border-gray-200">
-    <div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12">
-        <div class="md:w-1/2 text-center md:text-left">
-            <h2 class="font-display text-3xl md:text-4xl font-bold text-acari-dark mb-4 md:mb-6">Sua doação transforma realidades</h2>
-            <p class="text-gray-600 mb-6 text-sm md:text-base">Utilize o QR Code ao lado para fazer sua doação via PIX de forma rápida e segura. Todo valor é revertido para a manutenção dos nossos projetos sociais.</p>
-            <div class="flex items-center justify-center md:justify-start gap-4">
-                <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-acari-blue flex items-center justify-center text-white text-xl"><i class="fab fa-pix"></i></div>
-                <span class="font-bold text-acari-dark text-lg">PIX Direto</span>
+<section id="doacoes" class="py-16 md:py-24 bg-white px-6 md:px-8 relative overflow-hidden border-y border-gray-100">
+    <div class="absolute top-1/2 left-0 w-80 h-80 bg-acari-green/10 rounded-full blur-3xl -z-10 -translate-x-1/2 -translate-y-1/2"></div>
+    <div class="absolute top-0 right-0 w-64 h-64 bg-acari-blue/10 rounded-full blur-3xl -z-10 translate-x-1/2 -translate-y-1/2"></div>
+
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-12 md:gap-20 relative z-10">
+        
+        <div class="w-full md:w-1/2 reveal text-center md:text-left space-y-6">
+            <p class="text-acari-green text-[0.7rem] uppercase tracking-[0.2em] font-bold flex items-center justify-center md:justify-start gap-4">
+                <span class="w-8 h-px bg-acari-green"></span> Faça a diferença
+            </p>
+            
+            <h2 class="font-display text-3xl md:text-5xl font-bold text-acari-dark leading-tight italic">
+                Sua doação <span class="text-acari-green">transforma</span> realidades
+            </h2>
+            
+            <div class="text-gray-600 text-base md:text-lg leading-relaxed space-y-4">
+                <p>Utilize o QR Code ao lado para fazer sua doação via PIX de forma rápida e segura. Todo valor é revertido integralmente para a manutenção dos nossos projetos sociais e acolhimento das famílias.</p>
+            </div>
+            
+            <div class="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 pt-4">
+                <div class="flex items-center gap-4 bg-gray-50 border border-gray-200 px-6 py-3 rounded-full shadow-sm">
+                    <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-acari-green flex items-center justify-center text-white text-xl">
+                        <i class="fab fa-pix"></i>
+                    </div>
+                    <div class="text-left">
+                        <span class="block text-[0.65rem] md:text-xs text-gray-500 font-bold uppercase tracking-wider">PIX Direto</span>
+                        <span class="font-bold text-acari-dark text-sm md:text-base">Aponte a câmera</span>
+                    </div>
+                </div>
             </div>
         </div>
         
-        <div class="w-full md:w-1/2 flex justify-center bg-gray-50 p-6 md:p-8 rounded-[2rem] md:rounded-[3rem] shadow-inner">
-            <div class="text-center">
-                <img src="./img/pix-direto.png" alt="QR Code Doação PIX" class="w-48 h-48 md:w-64 md:h-64 border-4 md:border-8 border-acari-blue rounded-3xl shadow-lg bg-white mb-4 object-contain">
+        <div class="w-full md:w-1/2 flex justify-center reveal relative px-4 md:px-0 mt-8 md:mt-0">
+            <div class="absolute inset-0 bg-acari-blue rounded-[2rem] md:rounded-[3rem] rotate-6 scale-[0.80] md:scale-[0.85] -z-10 opacity-20"></div>
+            <div class="absolute inset-0 bg-acari-yellow rounded-[2rem] md:rounded-[3rem] -rotate-6 scale-[0.80] md:scale-[0.85] -z-10 opacity-20"></div>
+            
+            <div class="bg-white p-8 md:p-10 rounded-[2rem] md:rounded-[3rem] shadow-2xl border-4 md:border-8 border-acari-green relative z-10 w-full max-w-[320px] md:max-w-[380px] text-center">
+                <div class="bg-gray-50 p-4 rounded-3xl shadow-inner mb-6">
+                    <img src="./img/pix-direto.png" alt="QR Code Doação PIX" class="w-48 h-48 md:w-56 md:h-56 mx-auto rounded-2xl object-contain mix-blend-multiply">
+                </div>
+                <p class="text-acari-dark font-bold text-xl md:text-2xl font-display italic">Apoie o Acari</p>
+                <p class="text-xs md:text-sm text-gray-500 mt-1">Qualquer valor importa</p>
             </div>
+            
+            <div class="absolute top-0 right-0 md:top-4 md:right-8 w-12 h-12 md:w-16 md:h-16 bg-acari-blue rounded-full border-4 border-white shadow-lg z-20"></div>
+            <div class="absolute bottom-0 left-0 md:bottom-4 md:left-8 w-14 h-14 md:w-20 md:h-20 bg-acari-yellow rounded-full border-4 border-white shadow-lg z-20"></div>
         </div>
     </div>
 </section>
 
-<section class="py-12 md:py-16 bg-gray-50 px-6 md:px-8">
-    <div class="max-w-7xl mx-auto">
-        <h2 class="font-display text-3xl md:text-5xl font-bold text-acari-dark mb-10 md:mb-12 text-center">
-            Galeria das nossas Crianças
-        </h2>
+<!-- Galeria das nossas Crianças -->
+<section class="py-16 md:py-24 bg-gray-50 px-6 md:px-8 relative overflow-hidden">
+    <div class="absolute top-0 left-0 w-64 h-64 bg-acari-red/10 rounded-full blur-3xl -z-10 -translate-x-1/2 -translate-y-1/2"></div>
+    <div class="absolute bottom-0 right-0 w-80 h-80 bg-acari-green/10 rounded-full blur-3xl -z-10 translate-x-1/2 translate-y-1/2"></div>
+
+    <div class="max-w-7xl mx-auto relative z-10">
         
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4 md:gap-6">
-            <img src="./img/pascoa(1)-2026.jpeg" alt="Ação Instituto Acari" class="w-full aspect-square object-cover object-center rounded-full shadow-lg border-4 border-acari-red">
-            <img src="./img/atendimento(4).jpg" alt="Ação Instituto Acari" class="w-full aspect-square object-cover object-center rounded-full shadow-lg border-4 border-acari-yellow">
-            <img src="./img/pascoa(3)-2026.jpeg" alt="Ação Instituto Acari" class="w-full aspect-square object-cover object-center rounded-full shadow-lg border-4 border-acari-blue">
-            <img src="./img/atendimento(3).jpg" alt="Ação Instituto Acari" class="w-full aspect-square object-cover object-center rounded-full shadow-lg border-4 border-acari-green">
-            <img src="./img/atendimento(1).jpg" alt="Ação Instituto Acari" class="w-full aspect-square object-cover object-center rounded-full shadow-lg border-4 border-acari-dark">
-            <img src="./img/atendimento(2).jpg" alt="Ação Instituto Acari" class="w-full aspect-square object-cover object-center rounded-full shadow-lg border-4 border-acari-dark">
+        <div class="text-center mb-16 md:mb-20 reveal">
+            <p class="text-acari-blue text-[0.7rem] uppercase tracking-[0.2em] font-bold flex items-center justify-center gap-4 mb-4">
+                <span class="w-8 h-px bg-acari-blue"></span> Nossa Alegria <span class="w-8 h-px bg-acari-blue"></span>
+            </p>
+            <h2 class="font-display text-4xl md:text-5xl font-bold text-acari-dark leading-tight italic">
+                Galeria das nossas <span class="text-acari-blue">Crianças</span>
+            </h2>
+        </div>
+        
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 md:gap-8">
+            
+            <div class="reveal group relative" style="transition-delay: 100ms;">
+                <div class="absolute inset-0 bg-acari-red rounded-full rotate-6 group-hover:rotate-12 transition-transform duration-300 opacity-20 scale-105"></div>
+                <img src="./img/pascoa(1)-2026.jpeg" alt="Criança do Instituto Acari" class="w-full aspect-square object-cover object-center rounded-full shadow-lg border-4 border-acari-red relative z-10 group-hover:-translate-y-2 transition-all duration-300">
+            </div>
+
+            <div class="reveal group relative md:translate-y-8" style="transition-delay: 200ms;">
+                <div class="absolute inset-0 bg-acari-yellow rounded-full -rotate-6 group-hover:-rotate-12 transition-transform duration-300 opacity-20 scale-105"></div>
+                <img src="./img/atendimento(4).jpg" alt="Criança do Instituto Acari" class="w-full aspect-square object-cover object-center rounded-full shadow-lg border-4 border-acari-yellow relative z-10 group-hover:-translate-y-2 transition-all duration-300">
+            </div>
+
+            <div class="reveal group relative" style="transition-delay: 300ms;">
+                <div class="absolute inset-0 bg-acari-blue rounded-full rotate-12 group-hover:rotate-18 transition-transform duration-300 opacity-20 scale-105"></div>
+                <img src="./img/pascoa(3)-2026.jpeg" alt="Criança do Instituto Acari" class="w-full aspect-square object-cover object-center rounded-full shadow-lg border-4 border-acari-blue relative z-10 group-hover:-translate-y-2 transition-all duration-300">
+            </div>
+
+            <div class="reveal group relative md:translate-y-8" style="transition-delay: 400ms;">
+                <div class="absolute inset-0 bg-acari-green rounded-full -rotate-12 group-hover:-rotate-18 transition-transform duration-300 opacity-20 scale-105"></div>
+                <img src="./img/atendimento(3).jpg" alt="Criança do Instituto Acari" class="w-full aspect-square object-cover object-center rounded-full shadow-lg border-4 border-acari-green relative z-10 group-hover:-translate-y-2 transition-all duration-300">
+            </div>
+
+            <div class="reveal group relative" style="transition-delay: 500ms;">
+                <div class="absolute inset-0 bg-acari-dark rounded-full rotate-6 group-hover:rotate-12 transition-transform duration-300 opacity-10 scale-105"></div>
+                <img src="./img/atendimento(1).jpg" alt="Criança do Instituto Acari" class="w-full aspect-square object-cover object-center rounded-full shadow-lg border-4 border-acari-dark relative z-10 group-hover:-translate-y-2 transition-all duration-300">
+            </div>
+
+            <div class="reveal group relative md:translate-y-8" style="transition-delay: 600ms;">
+                <div class="absolute inset-0 bg-acari-red rounded-full -rotate-6 group-hover:-rotate-12 transition-transform duration-300 opacity-20 scale-105"></div>
+                <img src="./img/atendimento(2).jpg" alt="Criança do Instituto Acari" class="w-full aspect-square object-cover object-center rounded-full shadow-lg border-4 border-acari-red relative z-10 group-hover:-translate-y-2 transition-all duration-300">
+            </div>
+
         </div>
     </div>
 </section>
 
 <!-- LOCALIZAÇÃO -->
-<section id="localizacao" class="bg-white py-16 md:py-20 px-6 md:px-8">
-    <div class="max-w-7xl mx-auto">
-        <div class="grid md:grid-cols-2 gap-12 items-center">
-            <div class="reveal text-center md:text-left">
-                <p class="text-acari-blue text-[0.7rem] uppercase tracking-[0.2em] font-bold mb-4 md:mb-6 flex items-center justify-center md:justify-start gap-4"><span class="w-8 h-px bg-acari-blue"></span> Onde estamos</p>
-                <h2 class="text-3xl md:text-5xl font-bold text-acari-dark leading-tight mb-6 md:mb-8 italic">Venha nos <em>visitar</em></h2>
-                <div class="space-y-4 md:space-y-6 text-gray-600 italic">
-                    <div class="flex items-start justify-center md:justify-start gap-4 text-left">
-                        <i class="fas fa-location-dot mt-1 text-acari-red text-xl"></i>
-                        <p><strong>Endereço:</strong><br>Jardim Nova Itapevi <br>Itapevi - SP</p>
+<section id="localizacao" class="bg-white py-16 md:py-24 px-6 md:px-8 relative overflow-hidden border-t border-gray-100">
+    <div class="absolute top-0 right-1/4 w-72 h-72 bg-acari-yellow/10 rounded-full blur-3xl -z-10"></div>
+    <div class="absolute bottom-0 left-0 w-80 h-80 bg-acari-blue/10 rounded-full blur-3xl -z-10 translate-y-1/3 -translate-x-1/4"></div>
+
+    <div class="max-w-7xl mx-auto relative z-10">
+        <div class="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
+            
+            <div class="reveal text-center md:text-left space-y-6">
+                <p class="text-acari-blue text-[0.7rem] uppercase tracking-[0.2em] font-bold flex items-center justify-center md:justify-start gap-4">
+                    <span class="w-8 h-px bg-acari-blue"></span> Onde estamos
+                </p>
+                
+                <h2 class="font-display text-3xl md:text-5xl font-bold text-acari-dark leading-tight italic">
+                    Venha nos <span class="text-acari-red">visitar</span>
+                </h2>
+                
+                <div class="space-y-6 md:space-y-8 text-gray-600 mt-8">
+                    <div class="flex flex-col md:flex-row items-center md:items-start gap-4 text-center md:text-left">
+                        <div class="w-12 h-12 rounded-full bg-acari-red/10 flex items-center justify-center text-acari-red flex-shrink-0 shadow-sm">
+                            <i class="fas fa-location-dot text-xl"></i>
+                        </div>
+                        <div>
+                            <p class="font-bold text-acari-dark mb-1">Nosso Endereço</p>
+                            <p>Rua João Silvério de Freitas, 34<br>Jardim Nova Itapevi, Itapevi - SP</p>
+                        </div>
                     </div>
-                    <div class="flex items-start justify-center md:justify-start gap-4 text-left">
-                        <i class="fas fa-clock mt-1 text-acari-blue text-xl"></i>
-                        <p><strong>Atendimento:</strong><br>Segunda a Sexta: 09h às 18h</p>
+                    
+                    <div class="flex flex-col md:flex-row items-center md:items-start gap-4 text-center md:text-left">
+                        <div class="w-12 h-12 rounded-full bg-acari-blue/10 flex items-center justify-center text-acari-blue flex-shrink-0 shadow-sm">
+                            <i class="fas fa-clock text-xl"></i>
+                        </div>
+                        <div>
+                            <p class="font-bold text-acari-dark mb-1">Horário de Atendimento</p>
+                            <p>Segunda a Sexta-feira<br>Das 09h às 18h</p>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="reveal rounded-[2rem] md:rounded-[2.5rem] overflow-hidden shadow-2xl h-[300px] md:h-[400px] border-4 border-white bg-gray-200">
-                <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.4813583594834!2d-46.93844212467006!3d-23.5439715788118!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cf068437aec51b%3A0xb2370fa95a9d4bdc!2sR.%20Jo%C3%A3o%20Silv%C3%A9rio%20de%20Freitas%2C%2034%20-%20Jardim%20Nova%20Itapevi%2C%20Itapevi%20-%20SP%2C%2006694-020!5e0!3m2!1spt-BR!2sbr!4v1711867000000!5m2!1spt-BR!2sbr" 
-                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-                </iframe>
+            
+            <div class="reveal relative px-4 md:px-0 mt-8 md:mt-0">
+                <div class="absolute inset-0 bg-acari-yellow rounded-[2rem] md:rounded-[3rem] rotate-3 md:rotate-6 scale-[1.02] -z-10 opacity-30"></div>
+                <div class="absolute inset-0 bg-acari-green rounded-[2rem] md:rounded-[3rem] -rotate-3 md:-rotate-6 scale-[1.02] -z-10 opacity-30"></div>
+                
+                <div class="w-full h-[300px] md:h-[400px] rounded-[2rem] md:rounded-[3rem] overflow-hidden shadow-2xl border-4 md:border-8 border-white bg-gray-200 relative z-10">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.4813583594834!2d-46.93844212467006!3d-23.5439715788118!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cf068437aec51b%3A0xb2370fa95a9d4bdc!2sR.%20Jo%C3%A3o%20Silv%C3%A9rio%20de%20Freitas%2C%2034%20-%20Jardim%20Nova%20Itapevi%2C%20Itapevi%20-%20SP%2C%2006694-020!5e0!3m2!1spt-BR!2sbr!4v1711867000000!5m2!1spt-BR!2sbr" 
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
             </div>
+            
         </div>
     </div>
 </section>
 
 <!-- FOOTER -->
-<footer id="contato" class="bg-acari-dark pt-16 md:pt-20 pb-8 md:pb-10 px-6 md:px-8 text-white">
-    <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 md:gap-16 mb-12 md:mb-16 items-center">
-        <div class="text-center md:text-left">
-            <h2 class="font-display text-4xl md:text-5xl font-bold mb-4 md:mb-6">Fale Conosco</h2>
-            <p class="text-gray-300 mb-6 md:mb-8 max-w-md mx-auto md:mx-0 text-sm md:text-base">Estamos de braços abertos para te receber, tirar dúvidas ou conversar sobre como você pode apoiar o Instituto Acari.</p>
+<footer id="contato" class="bg-acari-dark pt-16 md:pt-24 pb-8 md:pb-10 px-6 md:px-8 text-white relative overflow-hidden z-0">
+    <div class="absolute top-0 right-1/4 w-72 h-72 bg-acari-yellow/10 rounded-full blur-3xl -z-10 translate-x-1/2 -translate-y-1/2"></div>
+    <div class="absolute bottom-0 left-10 w-80 h-80 bg-acari-blue/10 rounded-full blur-3xl -z-10 translate-y-1/2"></div>
+
+    <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 md:gap-16 mb-12 md:mb-16 items-center relative z-10">
+        
+        <div class="reveal text-center md:text-left">
+            <h2 class="font-display text-4xl md:text-5xl font-bold mb-4 md:mb-6 italic">
+                Fale <span class="text-acari-yellow">Conosco</span>
+            </h2>
+            <p class="text-gray-300 mb-8 md:mb-10 max-w-md mx-auto md:mx-0 text-sm md:text-base leading-relaxed">
+                Estamos de braços abertos para te receber, tirar dúvidas ou conversar sobre como você pode apoiar o Instituto Acari.
+            </p>
             
-            <div class="flex flex-col items-center md:items-start gap-4">
-                <a href="https://wa.me/5511999999999" target="_blank" class="flex items-center gap-4 hover:text-acari-green transition-colors w-fit">
-                    <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/10 flex items-center justify-center text-lg md:text-xl"><i class="fab fa-whatsapp"></i></div>
-                    <span class="font-bold text-sm md:text-base">(11) 99999-9999</span>
+            <div class="flex flex-col items-center md:items-start gap-5">
+                <a href="https://api.whatsapp.com/send?phone=5511994657566&text=Ol%C3%A1%2C%20tudo%20bem%3F" target="_blank" class="group flex items-center gap-4 hover:-translate-y-1 transition-all duration-300 w-fit">
+                    <div class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-acari-green flex items-center justify-center text-white text-xl md:text-2xl shadow-lg shadow-acari-green/20 group-hover:scale-110 transition-transform">
+                        <i class="fab fa-whatsapp"></i>
+                    </div>
+                    <span class="font-bold text-sm md:text-base group-hover:text-acari-green transition-colors">(11) 99465-7566</span>
                 </a>
-                <a href="mailto:institutoacari@gmail.com" class="flex items-center gap-4 hover:text-acari-blue transition-colors w-fit">
-                    <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/10 flex items-center justify-center text-lg md:text-xl"><i class="fas fa-envelope"></i></div>
-                    <span class="font-bold text-sm md:text-base break-all">institutoacari@gmail.com</span>
+                
+                <a href="mailto:institutoacari@gmail.com" class="group flex items-center gap-4 hover:-translate-y-1 transition-all duration-300 w-fit">
+                    <div class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-acari-blue flex items-center justify-center text-white text-xl md:text-2xl shadow-lg shadow-acari-blue/20 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <span class="font-bold text-sm md:text-base break-all group-hover:text-acari-blue transition-colors">institutoacari@gmail.com</span>
                 </a>
-                <a href="https://www.instagram.com/institutoacari/" target="_blank" class="flex items-center gap-4 hover:text-acari-red transition-colors w-fit">
-                    <div class="w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/10 flex items-center justify-center text-lg md:text-xl"><i class="fab fa-instagram"></i></div>
-                    <span class="font-bold text-sm md:text-base">@institutoacari</span>
+                
+                <a href="https://www.instagram.com/institutoacari/" target="_blank" class="group flex items-center gap-4 hover:-translate-y-1 transition-all duration-300 w-fit">
+                    <div class="w-12 h-12 md:w-14 md:h-14 rounded-full bg-acari-red flex items-center justify-center text-white text-xl md:text-2xl shadow-lg shadow-acari-red/20 group-hover:scale-110 transition-transform">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                    <span class="font-bold text-sm md:text-base group-hover:text-acari-red transition-colors">@institutoacari</span>
                 </a>
             </div>
         </div>
         
-        <div class="flex justify-center md:justify-end">
-             <div class="bg-white p-6 md:p-8 rounded-[2rem] md:rounded-[3rem] text-center shadow-2xl w-full max-w-sm">
-                 <img src="./img/logo.png" alt="Logo" class="w-20 h-20 md:w-24 md:h-24 mx-auto mb-4 object-cover rounded-full">
-                 <h3 class="font-display text-xl md:text-2xl font-bold text-acari-dark mb-2">Instituto Acari</h3>
-                 <p class="text-gray-600 text-xs md:text-sm mb-6">R. João Silvério de Freitas, 34<br>Jardim Nova Itapevi, Itapevi - SP</p>
-                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSceYbhG327kyPt8ccPd5X-yBjnlR6fbe6_l6IUhDREpPHwWgg/viewform" target="_blank" class="block w-full bg-acari-blue text-white py-3 rounded-full font-bold hover:bg-blue-600 transition-colors text-sm md:text-base">
-                     INSCREVA-SE
-                 </a>
+        <div class="reveal flex justify-center md:justify-end mt-8 md:mt-0 px-4 md:px-0">
+             <div class="relative w-full max-w-sm">
+                 <div class="absolute inset-0 bg-acari-blue rounded-[2rem] md:rounded-[3rem] rotate-3 md:rotate-6 scale-105 -z-10 opacity-80"></div>
+                 <div class="absolute inset-0 bg-acari-yellow rounded-[2rem] md:rounded-[3rem] -rotate-3 md:-rotate-6 scale-105 -z-10 opacity-80"></div>
+                 
+                 <div class="bg-white p-8 md:p-10 rounded-[2rem] md:rounded-[3rem] text-center shadow-2xl relative z-10 w-full">
+                     <img src="./img/logo.png" alt="Logo" class="w-20 h-20 md:w-24 md:h-24 mx-auto mb-4 object-cover rounded-full border-4 border-gray-50 shadow-sm">
+                     <h3 class="font-display text-2xl md:text-3xl font-bold text-acari-dark mb-2 italic">Instituto Acari</h3>
+                     <p class="text-gray-600 text-xs md:text-sm mb-8">R. João Silvério de Freitas, 34<br>Jardim Nova Itapevi, Itapevi - SP</p>
+                     
+                     <a href="https://docs.google.com/forms/d/e/1FAIpQLSceYbhG327kyPt8ccPd5X-yBjnlR6fbe6_l6IUhDREpPHwWgg/viewform" target="_blank" class="block w-full bg-acari-blue text-white py-4 rounded-full font-bold hover:bg-blue-600 hover:-translate-y-1 shadow-lg hover:shadow-xl transition-all duration-300 text-sm md:text-base">
+                         INSCREVA-SE
+                     </a>
+                 </div>
+                 
+                 <div class="absolute -top-4 -right-4 md:-top-6 md:-right-6 w-12 h-12 md:w-16 md:h-16 bg-acari-red rounded-full border-4 border-acari-dark shadow-lg z-20"></div>
+                 <div class="absolute -bottom-4 -left-4 md:-bottom-6 md:-left-6 w-10 h-10 md:w-14 md:h-14 bg-acari-green rounded-full border-4 border-acari-dark shadow-lg z-20"></div>
              </div>
         </div>
     </div>
 
-    <div class="max-w-7xl mx-auto border-t border-white/20 pt-6 md:pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs md:text-sm text-gray-400 text-center">
-        <p>Instituto Acari - CNPJ: 63.134.856/0001-70</p>
+    <div class="max-w-7xl mx-auto border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs md:text-sm text-gray-400 text-center relative z-10">
+        <p class="font-medium tracking-wide">Instituto Acari - CNPJ: 63.134.856/0001-70</p>
         <p>© 2026 · Todos os direitos reservados</p>
-        <p>Desenvolvido por <a href="https://jeancosta.com.br" target="_blank" class="text-acari-yellow hover:text-white transition-colors underline">Jean Costa</a></p>
+        <p>Desenvolvido por <a href="https://jeancosta.com.br" target="_blank" class="text-acari-yellow hover:text-white transition-colors underline underline-offset-2">Jean Costa</a></p>
     </div>
 </footer>
 
 <script src="./script.js"></script>
-
-<!-- Script simples apenas para fazer o menu mobile abrir e fechar -->
-<script>
-    document.getElementById('mobile-menu-btn').addEventListener('click', function() {
-        var menu = document.getElementById('mobile-menu');
-        menu.classList.toggle('hidden');
-        menu.classList.toggle('flex');
-    });
-
-    // Fecha o menu ao clicar em um link (mobile)
-    document.querySelectorAll('#mobile-menu a').forEach(link => {
-        link.addEventListener('click', () => {
-            var menu = document.getElementById('mobile-menu');
-            menu.classList.add('hidden');
-            menu.classList.remove('flex');
-        });
-    });
-</script>
 
 </body>
 </html>
