@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 | Instituto Acari</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --acari-orange: #f26522;
+            --acari-orange-light: #ff7a3d;
+            --acari-black: #080808; /* Preto mais profundo */
+            --acari-white: #ffffff;
+            --transition-premium: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body, html {
+            height: 100%;
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--acari-black);
+            color: var(--acari-white);
+            overflow: hidden;
+        }
+
+        /* Fundo com Vídeo e Máscara */
+        .video-wrapper {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .video-wrapper video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.4;
+            filter: grayscale(20%) contrast(1.1);
+        }
+
+        /* Overlay de Vinheta - Isso faz o centro "brilhar" */
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%);
+            z-index: 2;
+        }
+
+        .content {
+            position: relative;
+            z-index: 3;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 0 2rem;
+        }
+
+        /* 404 Gigante com Gradiente */
+        .error-code {
+            font-size: clamp(8rem, 18vw, 22rem);
+            font-weight: 900;
+            line-height: 0.8;
+            margin-bottom: 2rem;
+            background: linear-gradient(180deg, var(--acari-orange) 30%, #b3420f 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -0.8rem;
+            animation: float 5s ease-in-out infinite;
+            filter: drop-shadow(0 15px 30px rgba(242, 101, 34, 0.2));
+        }
+
+        .message h2 {
+            font-size: clamp(1.2rem, 3.5vw, 2.5rem);
+            text-transform: uppercase;
+            margin-bottom: 1.2rem;
+            letter-spacing: 0.4rem;
+            font-weight: 700;
+        }
+
+        .message p {
+            font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+            color: rgba(255, 255, 255, 0.6);
+            max-width: 550px;
+            margin-bottom: 4rem;
+            line-height: 1.6;
+            letter-spacing: 0.05rem;
+        }
+
+        /* Botões Estilo High-Tech */
+        .nav-buttons {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn {
+            position: relative;
+            padding: 1.2rem 3rem;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15rem;
+            text-decoration: none;
+            color: var(--acari-white);
+            border: 1.5px solid rgba(255, 255, 255, 0.2);
+            border-radius: 4px; /* Estilo mais quadrado e profissional */
+            overflow: hidden;
+            transition: var(--transition-premium);
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+        }
+
+        .btn span { position: relative; z-index: 2; }
+
+        .btn::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--acari-orange);
+            transform: translateY(100%);
+            transition: var(--transition-premium);
+            z-index: 1;
+        }
+
+        .btn:hover {
+            border-color: var(--acari-orange);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+        }
+
+        .btn:hover::after { transform: translateY(0); }
+
+        .btn-primary {
+            background: var(--acari-orange);
+            border-color: var(--acari-orange);
+        }
+        
+        .btn-primary::after { background: var(--acari-white); }
+        .btn-primary:hover { color: var(--acari-black); }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(-1deg); }
+            50% { transform: translateY(-25px) rotate(1deg); }
+        }
+
+        @media (max-width: 768px) {
+            .error-code { letter-spacing: -0.3rem; }
+            .btn { width: 100%; padding: 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="video-wrapper">
+        <div class="overlay"></div>
+        <video autoplay muted loop playsinline>
+            <source src="video/fundo.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <main class="content">
+        <div class="error-code">404</div>
+        <div class="message">
+            <h2>Fora de Combate</h2>
+            <p>Essa página não está no nosso tatame. <br> O caminho que você seguiu parece ter sido bloqueado.</p>
+        </div>
+
+        <div class="nav-buttons">
+            <a href="/" class="btn btn-primary"><span>Voltar à Base</span></a>
+            <a href="/bio" class="btn"><span>Links da Bio</span></a>
+        </div>
+    </main>
+
+</body>
+</html>
