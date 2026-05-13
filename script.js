@@ -1,10 +1,49 @@
 'use strict';
 
-// Envolvemos tudo no DOMContentLoaded para garantir que o HTML já carregou 100%
+// 1. FUNÇÃO DE TROCA DA GARRAFA (Escopo Global)
+// Precisa estar fora para o 'onclick' do HTML funcionar
+function updateBottle(colorName, hex) {
+    const img = document.getElementById('main-bottle');
+    const border = document.getElementById('bottle-border');
+    const bg = document.getElementById('bottle-bg');
+    const link = document.getElementById('whatsapp-buy');
+    
+    if (!img || !border || !bg || !link) return;
+
+    // 1. Troca a imagem com efeito de fade
+    img.style.opacity = '0';
+    img.style.transform = 'scale(0.9)'; // Leve encolhida para o efeito ficar mais premium
+    
+    setTimeout(() => {
+        img.src = `./img/garrafa-${colorName}.png`;
+        img.style.opacity = '1';
+        img.style.transform = 'scale(1)';
+    }, 200);
+
+    // 2. Troca as cores de destaque no card
+    border.style.borderColor = hex;
+    bg.style.backgroundColor = hex;
+
+    // 3. Atualiza o link do WhatsApp com a cor escolhida
+    const message = encodeURIComponent(`Olá! Gostaria de adquirir a Garrafa Térmica ${colorName.toUpperCase()} do Instituto.`);
+    link.href = `https://api.whatsapp.com/send?phone=5511994657566&text=${message}`;
+
+    // 4. Efeito visual nos botões de cor (Destaque do botão selecionado)
+    document.querySelectorAll('.color-btn').forEach(btn => {
+        btn.classList.remove('ring-2', 'ring-offset-2');
+    });
+    
+    // Opcional: Adiciona o anel de seleção ao botão clicado
+    if (window.event) {
+        window.event.currentTarget.classList.add('ring-2', 'ring-offset-2');
+    }
+}
+
+// 2. CONTROLES QUE DEPENDEM DO CARREGAMENTO DO HTML
 document.addEventListener('DOMContentLoaded', () => {
 
     // ==========================================
-    // 1. CONTROLE DO SCROLL DA NAVBAR
+    // CONTROLE DO SCROLL DA NAVBAR
     // ==========================================
     const navbar = document.getElementById('navbar');
     
@@ -21,19 +60,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ==========================================
-    // 2. MENU MOBILE (ABRIR E FECHAR)
+    // MENU MOBILE
     // ==========================================
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
 
     if (mobileMenuBtn && mobileMenu) {
-        // Abrir/Fechar ao clicar no botão de hambúrguer
         mobileMenuBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
             mobileMenu.classList.toggle('flex');
         });
 
-        // Fechar automaticamente ao clicar em qualquer link do menu
         const mobileLinks = mobileMenu.querySelectorAll('a');
         mobileLinks.forEach(link => {
             link.addEventListener('click', () => {
@@ -44,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // ==========================================
-    // 3. ANIMAÇÃO DE REVELAÇÃO (SCROLL)
+    // ANIMAÇÃO DE REVELAÇÃO (SCROLL)
     // ==========================================
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
@@ -55,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, { threshold: 0.1 });
 
-    // Pega todos os elementos com a classe .reveal, esconde primeiro, e passa a observar
+    // Pega todos os elementos com a classe .reveal e aplica o estado inicial
     document.querySelectorAll('.reveal').forEach(el => {
         el.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
         observer.observe(el);

@@ -8,7 +8,7 @@
     <link rel="icon" href="../img/logo.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <script src="https://cdn.tailwindcss.com"></script>
@@ -21,7 +21,7 @@
                         'acari-green': '#71C144',
                         'acari-red': '#E81C1D',
                         'acari-yellow': '#FDB80A',  
-                        'acari-dark': '#2C2B2B',
+                        'acari-dark': '#000000',
                     },
                 }
             }
@@ -30,99 +30,121 @@
     <style>
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-
-        /* Animação de Entrada e Saída */
-        .page-transition {
-            transition: opacity 0.4s ease, transform 0.4s ease;
-        }
-        .fade-out {
-            opacity: 0;
-            transform: scale(0.98);
-            pointer-events: none;
-        }
         
-        /* Barra de carregamento superior */
-        #loader-bar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            height: 3px;
-            width: 0;
-            background: #2196F3;
-            z-index: 100;
-            transition: width 0.3s ease;
+        .bg-acari-fundo {
+            background-image: url('./img/fundo.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+        }
+
+        /* Efeito de corte na imagem da Alice */
+        .alice-mask {
+            mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+            -webkit-mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
         }
     </style>
 </head>
-<body class="bg-gradient-to-br from-gray-50 to-gray-200 min-h-[100dvh] font-roboto text-acari-dark relative">
+<body class="bg-gray-100 bg-acari-fundo min-h-[100dvh] font-roboto text-acari-dark relative">
 
-    <div id="loader-bar"></div>
+    <div class="fixed inset-0 z-0 bg-white/10 pointer-events-none"></div>
 
-    <div class="fixed inset-0 z-0 pointer-events-none overflow-hidden">
-        <div class="absolute top-[-5%] left-[-10%] w-32 h-32 md:w-48 md:h-48 rounded-full border-[12px] border-acari-green opacity-20"></div>
-        <div class="absolute bottom-[-5%] right-[-10%] w-40 h-40 md:w-56 md:h-56 rounded-full border-[16px] border-acari-blue opacity-20"></div>
-    </div>
+    <div id="main-container" class="relative z-10 min-h-screen flex flex-col items-center py-6 px-4">
+    
 
-    <div id="main-container" class="page-transition relative z-10 min-h-screen flex flex-col items-center justify-center py-10 px-4 opacity-100">
-        
-        <div class="w-full max-w-[380px] bg-white/90 backdrop-blur-xl rounded-[2.5rem] shadow-2xl p-6 md:p-8 text-center border border-white max-h-[95dvh] overflow-y-auto no-scrollbar my-auto">
+        <div class="w-full max-w-[380px] bg-white rounded-[2.5rem] shadow-2xl text-center border border-white p-6 pt-12 pb-8 z-10">
             
-            <div class="relative inline-block mb-3 mt-2">
-                <div class="absolute inset-0 bg-acari-yellow rounded-full rotate-6 scale-105 -z-10 opacity-50"></div>
-                <div class="absolute inset-0 bg-acari-blue rounded-full -rotate-6 scale-105 -z-10 opacity-50"></div>
-                <img src="../img/logo.png" alt="Instituto Acari" class="w-20 h-20 md:w-24 md:h-24 mx-auto rounded-full object-contain bg-white border-4 border-white shadow-md relative z-10">
+            <div class="relative inline-block mb-4">
+                <div class="w-24 h-24 bg-white rounded-full border-2 border-gray-100 shadow-md overflow-hidden flex items-center justify-center">
+                    <img src="./img/logo.png" alt="Logo" class="w-full h-full object-contain scale-[1.7] -translate-y-[-2%] translate-x-[4%]">
+                </div>
             </div>
             
-            <h1 class="text-xl md:text-2xl font-bold text-acari-dark mb-1">Instituto Acari</h1>
-            <p class="text-gray-600 text-[0.7rem] md:text-xs mb-5 font-medium px-2 leading-tight">Acolhimento, Cuidado, Amor, Respeito e Inclusão</p>
+            <h1 class="text-3xl md:text-4xl font-black text-acari-dark mb-1 tracking-tight">Instituto Acari</h1>
+            <p class="text-gray-600 text-xs mb-8 font-medium px-6 leading-tight uppercase tracking-widest">Acolhimento, Cuidado, Amor, Respeito e Inclusão</p>
             
-            <div class="flex justify-center gap-4 mb-6">
-                <a href="https://www.instagram.com/institutoacari/" class="social-link w-10 h-10 rounded-full bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-500 text-white flex items-center justify-center text-xl shadow-md transition-transform hover:scale-110 active:scale-90">
+            <div class="flex justify-center gap-4 mb-8">
+                <a href="https://www.instagram.com/institutoacari/" class="w-10 h-10 rounded-full bg-gradient-to-tr from-yellow-400 via-pink-500 to-purple-500 text-white flex items-center justify-center text-xl transition-transform hover:scale-110">
                     <i class="fab fa-instagram"></i>
                 </a>
-                <a href="https://api.whatsapp.com/send?phone=5511994657566" class="social-link w-10 h-10 rounded-full bg-[#25D366] text-white flex items-center justify-center text-xl shadow-md transition-transform hover:scale-110 active:scale-90">
+                <a href="https://api.whatsapp.com/send?phone=5511994657566" class="w-10 h-10 rounded-full bg-[#25D366] text-white flex items-center justify-center text-xl shadow-md transition-transform hover:scale-110">
                     <i class="fab fa-whatsapp"></i>
                 </a>
-                <a href="mailto:institutoacari@gmail.com" class="social-link w-10 h-10 rounded-full bg-acari-blue text-white flex items-center justify-center text-lg shadow-md transition-transform hover:scale-110 active:scale-90">
+                <a href="mailto:institutoacari@gmail.com" class="w-10 h-10 rounded-full bg-acari-blue text-white flex items-center justify-center text-lg shadow-md transition-transform hover:scale-110">
                     <i class="fas fa-envelope"></i>
                 </a>
             </div>
 
-            <div class="space-y-3 flex flex-col">
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSceYbhG327kyPt8ccPd5X-yBjnlR6fbe6_l6IUhDREpPHwWgg/viewform" target="_blank" class="nav-link group w-full flex items-center justify-center gap-2.5 bg-acari-blue text-white py-3.5 px-4 rounded-xl font-bold shadow-lg shadow-acari-blue/30 transition-all hover:-translate-y-1 hover:shadow-xl active:scale-95 text-sm">
-                    <i class="fas fa-plus"></i> INSCREVA-SE
-                </a>
-                
-                <a href="/#loja" target="_blank" class="nav-link group w-full flex items-center justify-center gap-2.5 bg-acari-yellow text-acari-dark py-3.5 px-4 rounded-xl font-bold shadow-lg shadow-acari-yellow/30 transition-all hover:-translate-y-1 hover:shadow-xl active:scale-95 text-sm">
-                    <i class="fas fa-shopping-bag"></i> ADQUIRA NOSSA GARRAFA
-                </a>
-
-                <a href="/#amigos" class="nav-link group w-full flex flex-col items-center justify-center bg-acari-green text-white py-2.5 px-4 rounded-xl font-bold shadow-lg shadow-acari-green/30 transition-all hover:-translate-y-1 hover:shadow-xl active:scale-95 leading-tight">
-                    <div class="flex items-center gap-2">
-                        <i class="fas fa-handshake"></i> <span>AMIGOS DO ACARI</span>
-                    </div>
-                    <span class="text-[0.6rem] font-medium tracking-wider mt-0.5 opacity-90 uppercase">Saiba como doar</span>
-                </a>
-                
-                <a href="https://api.whatsapp.com/send?phone=5511994657566&text=Quero ser voluntário!" target="_blank" class="nav-link group w-full flex items-center justify-center gap-2.5 bg-acari-red text-white py-3.5 px-4 rounded-xl font-bold shadow-lg shadow-acari-red/30 transition-all hover:-translate-y-1 hover:shadow-xl active:scale-95 text-sm">
-                    <i class="fas fa-user-group"></i> SEJA UM VOLUNTÁRIO
-                </a>
-
-                <a href="/" class="nav-link group w-full flex items-center justify-center gap-2.5 bg-acari-dark text-white py-3.5 px-4 rounded-xl font-bold shadow-lg shadow-acari-dark/30 transition-all hover:-translate-y-1 hover:shadow-xl active:scale-95 mt-2 text-sm">
-                    <i class="fas fa-globe text-acari-blue"></i> Acesse nosso Site Oficial
-                </a>
-            </div>
-
-            <div class="mt-8 flex flex-col items-center text-acari-dark text-sm border-t border-gray-100 pt-5 pb-2">
-                <i class="fas fa-location-dot text-acari-red text-2xl mb-2"></i>
-                <p class="font-medium text-[0.8rem]">Rua João Silvério de Freitas, 34</p>
-                <p class="text-gray-600 text-[0.7rem]">Nova Itapevi - Itapevi, SP</p>
-                <p class="text-gray-600 text-[0.7rem]">06694-020</p>
-            </div>
-
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSceYbhG327kyPt8ccPd5X-yBjnlR6fbe6_l6IUhDREpPHwWgg/viewform" target="_blank" 
+               class="group w-full grid grid-cols-[90px_1fr] h-[80px] items-center bg-acari-blue text-white rounded-2xl font-bold shadow-xl transition-all hover:scale-[1.02] active:scale-95">
+                <div class="flex justify-center items-center">
+                    <img src="./img/inscreva-se.png" alt="" class="w-12 h-12 object-contain brightness-0 invert">
+                </div>
+                <div class="text-left">
+                    <span class="text-[16px] tracking-widest uppercase font-black">inscreva-se</span>
+                </div>
+            </a>
         </div>
+
+        <div class="w-full max-w-[380px] space-y-4 mt-6 px-2">
+            
+            <a href="/#loja" target="_blank" 
+               class="group w-full grid grid-cols-[90px_1fr] h-[80px] items-center bg-acari-yellow text-white rounded-2xl font-bold shadow-lg transition-all hover:scale-[1.02] active:scale-95 leading-[1.1]">
+                <div class="flex justify-center items-center">
+                    <img src="./img/loja.png" alt="" class="w-12 h-12 object-contain brightness-0 invert">
+                </div>
+                <div class="text-left uppercase font-black tracking-widest text-[16px]">
+                    Adquira<br>Nossa garrafa
+                </div>
+            </a>
+
+            <a href="/#amigos" 
+               class="group w-full grid grid-cols-[90px_1fr] h-[80px] items-center bg-acari-green text-white rounded-2xl font-bold shadow-lg transition-all hover:scale-[1.02] active:scale-95">
+                <div class="flex justify-center items-center">
+                    <img src="./img/amigos.png" alt="" class="w-12 h-12 object-contain brightness-0 invert">
+                </div>
+                <div class="text-left">
+                    <div class="text-[16px] tracking-widest uppercase font-black leading-tight">Amigos do Acari</div>
+                    <div class="text-[10px] tracking-[0.15em] opacity-90 uppercase font-medium">Saiba como doar</div>
+                </div>
+            </a>
+            
+            <a href="https://api.whatsapp.com/send?phone=5511994657566&text=Quero ser voluntário!" target="_blank" 
+               class="group w-full grid grid-cols-[90px_1fr] h-[80px] items-center bg-acari-red text-white rounded-2xl font-bold shadow-lg transition-all hover:scale-[1.02] active:scale-95">
+                <div class="flex justify-center items-center">
+                    <img src="./img/voluntario.png" alt="" class="w-12 h-12 object-contain brightness-0 invert">
+                </div>
+                <div class="text-left font-black tracking-widest uppercase text-[16px]">
+                    Seja um<br>voluntário
+                </div>
+            </a>
+
+            <a href="/" 
+               class="group w-full grid grid-cols-[90px_1fr] h-[80px] items-center bg-acari-blue text-white rounded-2xl font-bold shadow-lg transition-all hover:scale-[1.02] active:scale-95">
+                <div class="flex justify-center items-center">
+                    <img src="./img/website.png" alt="" class="w-11 h-11 object-contain brightness-0 invert">
+                </div>
+                <div class="text-left font-black tracking-widest uppercase text-[16px]">
+                    Acesse nosso Site
+                </div>
+            </a>
+        </div>
+
+        <div class="mt-12 flex flex-col items-center text-acari-dark text-center pb-10">
+            <img src="./img/local.png" alt="" class="w-16 h-16 object-contain mb-2">
+            <p class="font-bold text-[1rem]">Rua João Silvério de Freitas, 34</p>
+            <p class="text-gray-600 text-[0.8rem] font-medium">Nova Itapevi - Itapevi, SP | 06694-020</p>
+        </div>
+
+        <div class="relative w-full max-w-[380px] flex justify-center mb-[-40px] z-20">
+            <div class="absolute top-10 left-10 w-32 h-32 bg-acari-yellow rounded-full opacity-40 blur-xl animate-pulse"></div>
+            <div class="absolute top-5 right-10 w-40 h-40 bg-acari-blue rounded-full opacity-30 blur-xl"></div>
+            
+            <img src="./img/alice.png" alt="Melissa" class="w-full h-64 object-contain alice-mask relative z-10">
+        </div>
+
     </div>
 
-    <script src="./script.js"></script>
 </body>
 </html>
