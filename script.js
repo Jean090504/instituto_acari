@@ -99,3 +99,23 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 });
+
+var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: true,
+    autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+    },
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+    on: {
+        init: function () {
+            // Garante que o primeiro slide apareça
+            document.querySelectorAll('.swiper-slide').forEach(s => s.classList.add('opacity-100'));
+        },
+    },
+});

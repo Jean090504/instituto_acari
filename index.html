@@ -60,162 +60,103 @@
         100% { transform: translateX(0); }
         }
         .animate-slide-right {
-            animation: slide-right 8s linear infinite; /* Altere o "8s" para deixar mais rápido ou mais devagar */
+            animation: slide-right 8s linear infinite;
         }
+
+        .swiper-pagination-bullet { background: #cbd5e1; opacity: 1; width: 10px; height: 10px; transition: all 0.3s; }
+        .swiper-pagination-bullet-active { background: #2196F3; width: 30px; border-radius: 5px; }
+
     </style>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
 </head>
 <body class="bg-gray-50">
 
 <!-- NAVBAR -->
-<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-white shadow-md px-4 md:px-8 py-4 transition-all duration-300">
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm px-4 md:px-8 py-2 transition-all duration-300 border-b border-gray-100">
     <div class="max-w-7xl mx-auto flex justify-between items-center">
+        
         <a href="#inicio" class="flex items-center gap-3 group">
-            <img src="./img/logo.png" alt="Logo Instituto Acari" class="w-10 h-10 md:w-12 md:h-12 rounded-full object-cover group-hover:scale-105 transition-transform">
-            <span class="font-display text-lg md:text-xl font-bold text-acari-blue">Instituto Acari</span>
+            <img src="./img/logo.png" alt="Logo" class="w-20 h-20 md:w-20 md:h-20 object-contain">
+            <div class="flex flex-col">
+                <span class="text-xl md:text-2xl font-serif font-bold text-gray-800 leading-none">Instituto Acari</span>
+                <span class="text-[10px] md:text-[11px] text-gray-500 font-medium tracking-tight">Acolhimento, Cuidado, Amor, Respeito e Inclusão</span>
+            </div>
         </a>
         
-        <div class="hidden md:flex items-center gap-8">
-            <a href="#inicio" class="relative text-acari-dark font-medium hover:text-acari-blue transition-colors group py-1">
+        <div class="hidden md:flex items-center gap-6 lg:gap-8">
+            <a href="#inicio" class="flex items-center gap-2 text-gray-700 font-bold hover:text-acari-blue transition-colors text-sm uppercase tracking-tight">
+                <i class="fas fa-home text-acari-blue text-lg -translate-y-[2px]"></i>
                 Início
-                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-acari-blue transition-all duration-300 group-hover:w-full rounded-full"></span>
             </a>
             
-            <a href="#sobre" class="relative text-acari-dark font-medium hover:text-acari-red transition-colors group py-1">
-                Quem Somos
-                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-acari-red transition-all duration-300 group-hover:w-full rounded-full"></span>
+            <a href="#amigos" class="text-gray-700 font-bold hover:text-acari-green transition-colors text-sm uppercase tracking-tight">
+                AMIGOS DO ACARI
             </a>
             
-            <a href="#amigos" class="relative text-acari-dark font-medium hover:text-acari-green transition-colors group py-1">
-                Amigos do Acari
-                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-acari-green transition-all duration-300 group-hover:w-full rounded-full"></span>
+            <a href="#doacoes" class="text-gray-700 font-bold hover:text-acari-yellow transition-colors text-sm uppercase tracking-tight">
+                DOAÇÕES
             </a>
             
-            <a href="#doacoes" class="relative text-acari-dark font-medium hover:text-acari-yellow transition-colors group py-1">
-                Doações
-                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-acari-yellow transition-all duration-300 group-hover:w-full rounded-full"></span>
+            <a href="#contato" class="text-gray-700 font-bold hover:text-acari-blue transition-colors text-sm uppercase tracking-tight">
+                CONTATOS
             </a>
             
-            <a href="#contato" class="relative text-acari-dark font-medium hover:text-acari-blue transition-colors group py-1 mr-2">
-                Contato
-                <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-acari-blue transition-all duration-300 group-hover:w-full rounded-full"></span>
-            </a>
-            
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSceYbhG327kyPt8ccPd5X-yBjnlR6fbe6_l6IUhDREpPHwWgg/viewform" target="_blank" class="bg-acari-blue text-white px-7 py-2.5 rounded-full font-bold shadow-md hover:bg-blue-600 hover:-translate-y-0.5 hover:shadow-lg transition-all duration-300 text-sm">
+            <a href="https://docs.google.com/forms/..." target="_blank" 
+               class="bg-acari-green text-white px-6 py-2 rounded-full font-black shadow-sm hover:bg-green-600 hover:-translate-y-0.5 transition-all duration-300 text-sm uppercase italic tracking-widest">
                 INSCREVA-SE
             </a>
         </div>
 
-        <button id="mobile-menu-btn" class="md:hidden text-acari-dark text-2xl focus:outline-none p-2 rounded-lg hover:bg-gray-100 transition-colors">
+        <button id="mobile-menu-btn" class="md:hidden text-gray-800 text-2xl p-2">
             <i class="fas fa-bars"></i>
         </button>
     </div>
 
-    <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 right-0 bg-white shadow-xl border-t border-gray-100 flex-col py-4 px-4 gap-2 rounded-b-2xl">
-        <a href="#inicio" class="block text-acari-dark font-medium hover:text-acari-blue hover:bg-acari-blue/10 px-4 py-3 rounded-xl transition-all">Início</a>
-        <a href="#sobre" class="block text-acari-dark font-medium hover:text-acari-red hover:bg-acari-red/10 px-4 py-3 rounded-xl transition-all">Quem Somos</a>
-        <a href="#amigos" class="block text-acari-dark font-medium hover:text-acari-green hover:bg-acari-green/10 px-4 py-3 rounded-xl transition-all">Amigos do Acari</a>
-        <a href="#doacoes" class="block text-acari-dark font-medium hover:text-acari-yellow hover:bg-acari-yellow/10 px-4 py-3 rounded-xl transition-all">Doações</a>
-        <a href="#contato" class="block text-acari-dark font-medium hover:text-acari-blue hover:bg-acari-blue/10 px-4 py-3 rounded-xl transition-all">Contato</a>
-        
-        <div class="px-2 pt-2 pb-1">
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSceYbhG327kyPt8ccPd5X-yBjnlR6fbe6_l6IUhDREpPHwWgg/viewform" target="_blank" class="block w-full text-center bg-acari-blue text-white px-8 py-3.5 rounded-full font-bold shadow-md hover:bg-blue-600 transition-colors">
-                INSCREVA-SE
-            </a>
-        </div>
+    <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 right-0 bg-white shadow-xl border-t border-gray-100 flex-col py-4 px-6 gap-2">
+        <a href="#inicio" class="py-3 border-b border-gray-50 text-gray-700 font-bold uppercase text-xs">Início</a>
+        <a href="#amigos" class="py-3 border-b border-gray-50 text-gray-700 font-bold uppercase text-xs">Amigos do Acari</a>
+        <a href="#doacoes" class="py-3 border-b border-gray-50 text-gray-700 font-bold uppercase text-xs">Doações</a>
+        <a href="#contato" class="py-3 border-b border-gray-50 text-gray-700 font-bold uppercase text-xs">Contatos</a>
+        <a href="https://docs.google.com/forms/..." class="mt-4 block w-full text-center bg-acari-green text-white py-3 rounded-full font-bold uppercase tracking-widest">Inscreva-se</a>
     </div>
 </nav>
 
 <!-- Banner -->
-<section class="container mx-auto px-4 py-8 md:py-20">
-    <div class="relative w-full rounded-[2rem] md:rounded-[2.5rem] overflow-hidden shadow-2xl bg-gray-100 aspect-[4/5] md:aspect-[21/9]">
-        
-        <div class="absolute inset-0 z-0">
-            <img src="./img/pascoa.png" alt="Campanha" class="w-full h-full object-cover object-center">
-            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
-        </div>
-        
-        <div class="relative z-10 w-full h-full p-6 md:p-16 flex flex-col justify-end items-start text-left">
-            <span class="bg-acari-yellow text-acari-dark text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full mb-3 shadow-lg">
-                Campanha Especial
-            </span>
-
-            <h1 class="font-black text-2xl md:text-6xl leading-tight mb-3 text-white tracking-tighter uppercase">
-                Campanha de teste <br> <span class="text-acari-yellow">Instituto Acari</span>
-            </h1>
+<section class="relative pt-24 pb-8 md:pt-32 md:pb-12">
+    <div class="swiper mySwiper container mx-auto px-4 overflow-visible">
+        <div class="swiper-wrapper">
             
-            <p class="text-white/80 text-xs md:text-lg mb-6 max-w-sm md:max-w-xl font-medium leading-relaxed">
-                TESTE DE COPY PARA GARANTIR QUE A MENSAGEM PRINCIPAL SEJA CLARA E IMPACTANTE NO CELULAR.
-            </p>
-            
-            <div class="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
-                <a href="#doar" class="bg-[#f26522] text-white font-black px-8 py-3.5 rounded-full text-center shadow-xl uppercase tracking-widest text-[10px] md:text-xs">
-                    Quero Contribuir
-                </a>
-                <a href="/bio" class="bg-white/10 backdrop-blur-md border border-white/20 text-white font-black px-8 py-3.5 rounded-full text-center uppercase tracking-widest text-[10px] md:text-xs">
-                    Saiba Mais
-                </a>
+            <div class="swiper-slide opacity-0 transition-opacity duration-500">
+                <div class="rounded-2xl overflow-hidden max-w-[1200px] mx-auto shadow-2xl">
+                    <img src="./img/banner-1.png" class="w-full h-full object-cover" alt="Criança estudando">
+                </div>
             </div>
+
+            <div class="swiper-slide">
+                <div class="swiper-slide opacity-0 transition-opacity duration-500">
+                    <div class="rounded-2xl overflow-hidden max-w-[1200px] mx-auto shadow-2xl">
+                        <img src="./img/banner-2.png" class="w-full h-full object-cover" alt="Criança estudando">
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="swiper-slide opacity-0 transition-opacity duration-500">
+                    <div class="rounded-2xl overflow-hidden max-w-[1200px] mx-auto shadow-2xl">
+                        <img src="./img/banner-3.png" class="w-full h-full object-cover" alt="Criança estudando">
+                    </div>
+                </div>
+            </div>
+
         </div>
+
+        <div class="swiper-pagination !-bottom-10"></div>
     </div>
 </section>
 
-<!-- HERO -->
-<section id="inicio" class="relative min-h-screen flex items-center pt-28 pb-12 px-6 md:px-8 overflow-hidden bg-white">
-    <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center w-full">
-            <div class="z-10 space-y-8 md:space-y-10 text-center md:text-left mt-8 md:mt-0"> 
-        
-        <h1 class="font-display text-4xl sm:text-5xl md:text-7xl font-bold text-gray-800 leading-tight">
-            <span class="text-acari-blue">Acolher</span>, 
-            <span class="text-acari-green">Cuidar</span>, 
-            <span class="text-acari-red">Apoiar</span>, 
-            <span class="text-acari-yellow">Respeitar</span> e 
-            <span class="text-acari-blue">Incluir</span>.
-        </h1>
-        
-        <ul class="text-gray-600 text-base md:text-lg max-w-lg mx-auto md:mx-0 space-y-4 md:space-y-5 font-medium"> 
-            <li class="flex items-center justify-center md:justify-start gap-3">
-                <div class="w-8 h-8 rounded-full bg-acari-blue/10 flex items-center justify-center text-acari-blue flex-shrink-0">
-                    <i class="fas fa-hand-holding-heart"></i>
-                </div>
-                <span>Acolhimento e Cuidado humanizado.</span>
-            </li>
-            <li class="flex items-center justify-center md:justify-start gap-3">
-                <div class="w-8 h-8 rounded-full bg-acari-red/10 flex items-center justify-center text-acari-red flex-shrink-0">
-                    <i class="fas fa-heart"></i>
-                </div>
-                <span>Amor, Respeito e Inclusão para todos.</span>
-            </li>
-            <li class="flex items-center justify-center md:justify-start gap-3">
-                <div class="w-8 h-8 rounded-full bg-acari-yellow/10 flex items-center justify-center text-acari-yellow flex-shrink-0">
-                    <i class="fas fa-puzzle-piece"></i>
-                </div>
-                <span>Construindo pontes entre potencial e possibilidades.</span>
-            </li>
-        </ul>
-
-        <div class="flex flex-col sm:flex-row flex-wrap justify-center md:justify-start gap-4 pt-2">
-            <a href="https://api.whatsapp.com/send/?phone=5511994657566&text=Ol%C3%A1%2C+quero+ser+um+volunt%C3%A1rio+no+Instituto+Acari%21&type=phone_number&app_absent=0" target="_blank" class="group bg-acari-green text-white px-6 md:px-8 py-4 rounded-full font-bold shadow-lg shadow-acari-green/30 hover:-translate-y-1 hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-2 w-full sm:w-auto text-sm md:text-base">
-                SEJA UM VOLUNTÁRIO <i class="fab fa-whatsapp text-xl group-hover:rotate-12 transition-transform"></i>
-            </a>
-            <a href="#amigos" class="bg-acari-yellow text-acari-dark px-6 md:px-8 py-4 rounded-full font-bold shadow-lg shadow-acari-yellow/30 hover:-translate-y-1 hover:shadow-xl transition-all duration-300 w-full sm:w-auto text-center text-sm md:text-base">
-                CONHEÇA OS PROJETOS
-            </a>
-        </div>
-    </div>
-        
-        <!-- CONTAINER DO VÍDEO RESPONSIVO -->
-        <div class="flex justify-center items-center px-4 md:px-0 w-full">
-            <div class="relative h-[500px] sm:h-[600px] md:h-[700px] aspect-[9/16]">
-                <div class="w-full h-full rounded-[2rem] md:rounded-[3rem] overflow-hidden border-4 md:border-8 border-acari-yellow shadow-2xl relative z-10 bg-gray-200">
-                    <video src="./video/video-dia-das-criancas2025.mp4" autoplay muted loop playsinline class="w-full h-full object-cover"></video>
-                </div>
-
-                <div class="absolute top-8 -right-6 md:top-16 md:-right-10 w-12 h-12 md:w-20 md:h-20 bg-acari-red rounded-full z-0"></div>
-                <div class="absolute bottom-8 -left-6 md:bottom-16 md:-left-12 w-16 h-16 md:w-24 md:h-24 bg-acari-blue rounded-full z-0"></div>
-            </div>
-        </div>
-    </div>
-</section>
 
 <div class="w-full h-1.5 md:h-2 overflow-hidden opacity-90 relative">
     <div class="flex w-[200%] h-full animate-slide-right">
@@ -231,6 +172,7 @@
     </div>
 </div>
 
+<!-- HERO -->
 <section id="sobre" class="py-16 md:py-24 bg-white px-6 md:px-8 relative overflow-hidden">
     <div class="absolute top-0 right-0 w-64 h-64 bg-acari-yellow/10 rounded-full blur-3xl -z-10 translate-x-1/2 -translate-y-1/2"></div>
     <div class="absolute bottom-0 left-0 w-80 h-80 bg-acari-blue/10 rounded-full blur-3xl -z-10 -translate-x-1/2 translate-y-1/2"></div>
