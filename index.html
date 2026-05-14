@@ -125,6 +125,40 @@
     </div>
 </nav>
 
+<!-- Banner -->
+<section class="container mx-auto px-4 py-8 md:py-20">
+    <div class="relative w-full rounded-[2rem] md:rounded-[2.5rem] overflow-hidden shadow-2xl bg-gray-100 aspect-[4/5] md:aspect-[21/9]">
+        
+        <div class="absolute inset-0 z-0">
+            <img src="./img/pascoa.png" alt="Campanha" class="w-full h-full object-cover object-center">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+        </div>
+        
+        <div class="relative z-10 w-full h-full p-6 md:p-16 flex flex-col justify-end items-start text-left">
+            <span class="bg-acari-yellow text-acari-dark text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full mb-3 shadow-lg">
+                Campanha Especial
+            </span>
+
+            <h1 class="font-black text-2xl md:text-6xl leading-tight mb-3 text-white tracking-tighter uppercase">
+                Campanha de teste <br> <span class="text-acari-yellow">Instituto Acari</span>
+            </h1>
+            
+            <p class="text-white/80 text-xs md:text-lg mb-6 max-w-sm md:max-w-xl font-medium leading-relaxed">
+                TESTE DE COPY PARA GARANTIR QUE A MENSAGEM PRINCIPAL SEJA CLARA E IMPACTANTE NO CELULAR.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
+                <a href="#doar" class="bg-[#f26522] text-white font-black px-8 py-3.5 rounded-full text-center shadow-xl uppercase tracking-widest text-[10px] md:text-xs">
+                    Quero Contribuir
+                </a>
+                <a href="/bio" class="bg-white/10 backdrop-blur-md border border-white/20 text-white font-black px-8 py-3.5 rounded-full text-center uppercase tracking-widest text-[10px] md:text-xs">
+                    Saiba Mais
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
 <!-- HERO -->
 <section id="inicio" class="relative min-h-screen flex items-center pt-28 pb-12 px-6 md:px-8 overflow-hidden bg-white">
     <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center w-full">
@@ -554,13 +588,25 @@
                 </div>
 
                 <div class="flex gap-4 mb-10">
-                    <button onclick="updateBottle('branco', '#FFFFFF')" class="color-btn w-10 h-10 rounded-full bg-acari-white border-4 border-yellow shadow-md ring-2 ring-acari-yellow transition-all hover:scale-110" title="Amarelo"></button>
+                    <button onclick="updateBottle('amarela', '#FDB80A')" 
+                            class="color-btn w-10 h-10 rounded-full bg-acari-yellow border-4 border-white shadow-md ring-2 ring-acari-yellow transition-all hover:scale-110" 
+                            title="Amarelo">
+                    </button>
                     
-                    <button onclick="updateBottle('azul', '#2196F3')" class="color-btn w-10 h-10 rounded-full bg-acari-blue border-4 border-white shadow-md hover:ring-2 hover:ring-acari-blue transition-all hover:scale-110" title="Azul"></button>
+                    <button onclick="updateBottle('azul', '#2196F3')" 
+                            class="color-btn w-10 h-10 rounded-full bg-acari-blue border-4 border-white shadow-md hover:ring-2 hover:ring-acari-blue transition-all hover:scale-110" 
+                            title="Azul">
+                    </button>
                     
-                    <button onclick="updateBottle('verde', '#71C144')" class="color-btn w-10 h-10 rounded-full bg-acari-green border-4 border-white shadow-md hover:ring-2 hover:ring-acari-green transition-all hover:scale-110" title="Verde"></button>
+                    <button onclick="updateBottle('verde', '#71C144')" 
+                            class="color-btn w-10 h-10 rounded-full bg-acari-green border-4 border-white shadow-md hover:ring-2 hover:ring-acari-green transition-all hover:scale-110" 
+                            title="Verde">
+                    </button>
                     
-                    <button onclick="updateBottle('vermelha', '#E81C1D')" class="color-btn w-10 h-10 rounded-full bg-acari-red border-4 border-white shadow-md hover:ring-2 hover:ring-acari-red transition-all hover:scale-110" title="Vermelho"></button>
+                    <button onclick="updateBottle('vermelha', '#E81C1D')" 
+                            class="color-btn w-10 h-10 rounded-full bg-acari-red border-4 border-white shadow-md hover:ring-2 hover:ring-acari-red transition-all hover:scale-110" 
+                            title="Vermelho">
+                    </button>
                 </div>
 
                 <a id="whatsapp-buy" href="https://api.whatsapp.com/send?phone=5511994657566&text=Olá! Gostaria de adquirir a Garrafa Térmica AMARELA do Instituto." target="_blank" 

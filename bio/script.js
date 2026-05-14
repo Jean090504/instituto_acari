@@ -1,33 +1,33 @@
-'use strict'
+// 1. Efeito Parallax no Fundo
+window.addEventListener('scroll', () => {
+    const bg = document.getElementById('bg-parallax');
+    const scrollValue = window.scrollY;
+    
+    // Ele move 20% da velocidade do scroll
+    bg.style.transform = `translateY(${scrollValue * 0.2}px)`;
+});
 
-// Lógica de Redirecionamento com Transição
-    document.querySelectorAll('.nav-link, .social-link').forEach(link => {
-        link.addEventListener('click', function(e) {
+// 2. Lógica de Redirecionamento e Loader
+document.querySelectorAll('.nav-link, .social-link').forEach(link => {
+    link.addEventListener('click', function(e) {
         const href = this.getAttribute('href');
         const target = this.getAttribute('target');
 
-        // Se for link externo (nova aba), apenas mostramos a animação de progresso rápida
-        if (target === '_blank') {
-            showLoader();
-                return; 
-            }
+        if (target === '_blank' || href.startsWith('#')) return;
 
-        // Se for link interno ou para o site oficial na mesma aba
         e.preventDefault();
         showLoader();
-        document.getElementById('main-container').classList.add('fade-out');
-                
+        document.getElementById('main-container').style.opacity = '0';
+        
         setTimeout(() => {
-        window.location.href = href;
-        }, 400); // Tempo da animação de saída
+            window.location.href = href;
+        }, 400);
     });
 });
 
-    function showLoader() {
+function showLoader() {
     const bar = document.getElementById('loader-bar');
     bar.style.width = '30%';
     setTimeout(() => bar.style.width = '70%', 100);
     setTimeout(() => bar.style.width = '100%', 300);
-    setTimeout(() => bar.style.width = '0', 600);
 }
-
